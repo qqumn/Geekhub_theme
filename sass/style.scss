@@ -34,3 +34,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 #secondary {
   @include span(2 of 12);
 }
+
+article.post {
+  max-width: 33%;
+  float: left;
+}

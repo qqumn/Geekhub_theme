@@ -90,7 +90,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-left: auto;
     margin-right: auto;
 }
-
 /* line 12, ../../../../../../../../lib/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .container-elastic:after {
     content: " ";
@@ -98,7 +97,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     clear: both;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 #primary {
     width: 83.05085%;
     float: left;
@@ -107,9 +106,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-right: 0;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 #secondary {
     width: 15.25424%;
     float: left;
     margin-right: 1.69492%;
+}
+
+/* line 37, ../sass/style.scss */
+article.post {
+    max-width: 33%;
+    float: left;
 }
