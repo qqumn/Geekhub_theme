@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7ef15841-892a-4ed0-baa9-266fa1415418" name="https://github.com/qqumn/Geekhub_theme" url="https://github.com/qqumn/Geekhub_theme">
+        <fileTransfer host="" port="21" username="">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
