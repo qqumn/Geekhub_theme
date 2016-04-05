@@ -16,8 +16,7 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container-elastic">
         <div class="site-info">
-            <a href="<?php echo esc_url(__('https://wordpress.org/', 'ghtmeme')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'ghtmeme'), 'WordPress'); ?></a>
-            <span class="sep"> | </span>
+            <a href="#masthead"><span class="fa fa-chevron-up"></span></a>
             <?php printf(esc_html__('Theme: %1$s by %2$s.', 'ghtmeme'), 'ghtmeme', '<a href="http://underscores.me/" rel="designer">gh-wp-team</a>'); ?>
         </div><!-- .site-info -->
     </div>

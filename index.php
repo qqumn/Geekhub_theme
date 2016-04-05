@@ -32,15 +32,33 @@ get_header(); ?>
 
                 /* Start the Loop */
                 while (have_posts()) : the_post();
+                    ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+                    <header class="entry-header">
+                        <div class="post-thumbnail">                            <?php if (has_post_thumbnail()) {
+                                the_post_thumbnail();
+                            } ?>
+                        </div>
+                        <h2 class="article-title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
+                        <?php the_tags('', ' • ', ''); ?>
+                    </header><!-- .entry-header -->
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part('template-parts/content', get_post_format());
+                    <div class="entry-content">
+                        <?php
+                        echo wp_trim_words(get_the_content(), 55, '<a class="read-more" href="' . get_permalink() . '">Read more</a>');
+                        ?>
+                    </div><!-- .entry-content -->
 
-                endwhile;
+                    <footer class="entry-footer">
+                        <a class="post-footer-date" href="<?php the_permalink(); ?>"><span
+                                class="fa fa-clock"></span><?php the_date('d-m-Y') ?></a>
+
+                        <a class="post-footer-comments" href="<?php the_permalink(); ?>"><span
+                                class="fa fa-envelope"></span><?php comments_number('no comments', 'one comment', '% comments'); ?>
+                        </a>
+                    </footer><!-- .entry-footer -->
+                    </article><!-- #post-## -->
+                <?php endwhile;
 
                 the_posts_navigation();
 
