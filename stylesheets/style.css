@@ -83,3 +83,33 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/* line 25, ../sass/style.scss */
+.container-elastic {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* line 12, ../../../../../../../../lib/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.container-elastic:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+/* line 28, ../sass/style.scss */
+#primary {
+    width: 83.05085%;
+    float: left;
+    margin-right: 1.69492%;
+    float: right;
+    margin-right: 0;
+}
+
+/* line 32, ../sass/style.scss */
+#secondary {
+    width: 15.25424%;
+    float: left;
+    margin-right: 1.69492%;
+}

@@ -19,4 +19,18 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-@import 'compass/reset'
+@import 'compass/reset';
+@import "susy";
+
+.container-elastic {
+  @include container(1170px);
+}
+
+#primary {
+  @include span(10 of 12);
+  @include last;
+}
+
+#secondary {
+  @include span(2 of 12);
+}
