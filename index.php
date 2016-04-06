@@ -35,12 +35,13 @@ get_header(); ?>
                     ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
                     <header class="entry-header">
-                        <div class="post-thumbnail">                            <?php if (has_post_thumbnail()) {
+                        <div class="post-thumbnail">
+                        <?php if (has_post_thumbnail()) {
                                 the_post_thumbnail();
                             } ?>
                         </div>
                         <h2 class="article-title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
-                        <?php the_tags('', ' • ', ''); ?>
+                        <div class="tags-block"><?php the_tags('', ' • ', ''); ?></div>
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">

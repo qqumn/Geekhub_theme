@@ -22,6 +22,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'compass/reset';
 @import "susy";
 @import "_blog";
+
 .container-elastic {
   @include container(1170px);
 }
@@ -36,6 +37,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 article.post {
-  max-width: 33%;
+  max-width: 30%;
+  margin: 10px;
+  box-sizing: border-box;
   float: left;
+  transition: max-width .6s ease;
+  @media (max-width: 800px) {
+    max-width: 45%;
+  }
 }

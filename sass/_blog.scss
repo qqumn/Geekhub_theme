@@ -14,3 +14,19 @@
     overflow: hidden;
   }
 }
+
+.site-main {
+  article {
+    border-top: 5px solid red;
+  }
+  .article-title {
+    margin: 20px 5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+    }
+  }
+}
