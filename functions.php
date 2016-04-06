@@ -122,6 +122,10 @@ function ghtmeme_scripts() {
 
 	wp_enqueue_script( 'ghtmeme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'ghtmeme-filtering-isotope', get_template_directory_uri() . '/js/isotopes_init.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'ghtmeme-isotope', get_template_directory_uri() . '/js/isotopes.min.js', array(), '20151215', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -179,15 +183,15 @@ function my_social_media_icons()
 				<li>
 					<a class="email" target="_blank"
 					   href="mailto:<?php echo antispambot(is_email(get_theme_mod($active_site))); ?>">
-						<i class="fa fa-envelope" title="<?php _e('email icon', 'text-domain'); ?>"></i>
+						<span class="fa fa-envelope" title="<?php _e('email icon', 'text-domain'); ?>"></span>
 					</a>
 				</li>
 			<?php } else { ?>
 				<li>
 					<a class="<?php echo $active_site; ?>" target="_blank"
 					   href="<?php echo esc_url(get_theme_mod($active_site)); ?>">
-						<i class="<?php echo esc_attr($class); ?>"
-						   title="<?php printf(__('%s icon', 'text-domain'), $active_site); ?>"></i>
+						<span class="<?php echo esc_attr($class); ?>"
+						   title="<?php printf(__('%s icon', 'text-domain'), $active_site); ?>"></span>
 					</a>
 				</li>
 				<?php
@@ -196,3 +200,44 @@ function my_social_media_icons()
 		echo "</ul>";
 	}
 }
+/*__________________________________________________*/
+/*create portfolio post type*/
+add_action('init', 'create_portfolio_post_type');
+
+function create_portfolio_post_type()
+{
+	register_post_type('portfolio',
+		array(
+			'labels' => array(
+				'name' => __('Portfolio'),
+				'singular_name' => __('Portfolio')
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'portfolio'),
+			'supports' => array('title', 'editor', 'thumbnail'),
+		)
+	);
+}
+
+
+/*__________________________________________________*/
+/*create company_logo taxonomy*/
+add_action('init', 'create_portfolio_tax');
+
+function create_portfolio_tax()
+{
+	register_taxonomy(
+		'portfolio_tax',
+		'portfolio',
+		array(
+			'label' => __('Categories'),
+			'rewrite' => array('slug' => 'portfolio_tax'),
+			'hierarchical' => true,
+		)
+	);
+}
+/*Create isotope filtering portfolio*/
+add_post_type_support( 'portfolio', 'genesis-cpt-archives-settings' );
+//* Define custom image size for Portfolio images in Portfolio archive
+add_image_size( 'portfolio-image', 330, 230, true );
