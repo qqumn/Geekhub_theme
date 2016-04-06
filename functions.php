@@ -196,3 +196,22 @@ function my_social_media_icons()
 		echo "</ul>";
 	}
 }
+
+add_action('init', 'ghdev_features');
+function ghdev_features()
+{
+	register_post_type('features', array(
+		'public' => true,
+		'supports' => array(
+			'title',
+			'thumbnail',
+			'editor',
+			'custom-fields'
+		),
+		'labels' => array(
+			'name' => __('Features'),
+			'add_new' => 'Add feature',
+			'all_items' => 'All features'
+		)
+	));
+}
