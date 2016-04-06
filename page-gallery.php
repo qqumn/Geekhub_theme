@@ -1,5 +1,5 @@
 <?php
-/*Template Name: Features */
+/*Template Name: Gallery*/
 
 get_header(); ?>
     <div class="container-elastic">
@@ -9,23 +9,22 @@ get_header(); ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
                 <h3 class="page-title"><?php the_title() ?></h3>
-                <?php $query = new WP_Query(array('post_type' => 'features', 'posts_per_page' => 18)); ?>
+                <?php $query = new WP_Query(array('post_type' => 'gallery', 'posts_per_page' => 24)); ?>
                 <?php if ($query->have_posts()) : ?>
-                    <ul class="features-list">
+                    <ul class="gallery">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
-                            <li class="feature">
-                                <div class="feature-thumbnail">
+                            <li class="gallery-item">
+                                <div class="gallery-thumbnail">
                                     <?php if (has_post_thumbnail()) {
                                         the_post_thumbnail();
                                     } ?>
                                 </div>
-                                <div class="feature-meta">
-                                    <h3 class="feature-title">
-                                        <?php the_title(); ?>
-                                    </h3>
-                                    <div class="feature-text">
-                                        <?php the_content(); ?>
-                                    </div>
+                                <div class="gallery-rollover">
+                                    <a href="<?php the_permalink(); ?>" class="gallery-link">
+                                        <h3 class="feature-title">
+                                            <?php the_title(); ?>
+                                        </h3>
+                                    </a>
                                 </div>
                             </li>
                         <?php endwhile; ?>
