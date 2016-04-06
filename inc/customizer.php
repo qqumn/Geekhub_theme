@@ -52,6 +52,10 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'default' => 'Street City 123',
 		'transport' => 'refresh'
 	));
+	$wp_customize->add_setting('name', array(
+		'default' => 'LExa Lexa',
+		'transport' => 'refresh'
+	));
 	$wp_customize->add_setting('address-map', array(
 		'default' => '',
 		'transport' => 'refresh'
@@ -60,6 +64,12 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'label' => __('Email', 'ghdev'),
 		'section' => 'contact_data',
 		'settings' => 'mail',
+		'priority' => 1
+	)));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'name-input', array(
+		'label' => __('Name', 'ghdev'),
+		'section' => 'contact_data',
+		'settings' => 'name',
 		'priority' => 1
 	)));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address-input', array(
