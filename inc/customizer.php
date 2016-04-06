@@ -39,7 +39,57 @@ function ghtmeme_customize_register( $wp_customize ) {
 
 		$priority = $priority + 5;
 	}
+	/* 4.2 Footer data customizer */
+	$wp_customize->add_section('contact_data', array(
+		'title' => __('Contact data', 'ghdev'),
+		'priority' => 120
+	));
+	$wp_customize->add_setting('mail', array(
+		'default' => 'mail@host.com',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_setting('address', array(
+		'default' => 'Street City 123',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_setting('address-map', array(
+		'default' => '',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'mail-input', array(
+		'label' => __('Email', 'ghdev'),
+		'section' => 'contact_data',
+		'settings' => 'mail',
+		'priority' => 1
+	)));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address-input', array(
+		'label' => __('Address', 'ghdev'),
+		'section' => 'contact_data',
+		'settings' => 'address',
+		'priority' => 1
+	)));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address-map', array(
+		'label' => __('Google maps link', 'ghdev'),
+		'section' => 'contact_data',
+		'settings' => 'address-map',
+		'priority' => 1
+	)));
 
+	/* 4.3 header logo customizer */
+	$wp_customize->add_section('ghdev_logo', array(
+		'title' => __('Logo image', 'ghdev'),
+		'priority' => 120
+	));
+	$wp_customize->add_setting('image', array(
+		'default' => 'none',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
+		'label' => __('Logo image', 'ghdev'),
+		'section' => 'ghdev_logo',
+		'settings' => 'image',
+		'priority' => 1
+	)));
 }
 add_action( 'customize_register', 'ghtmeme_customize_register' );
 

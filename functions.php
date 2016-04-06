@@ -248,3 +248,7 @@ function ghdev_gallery()
         )
     ));
 }
+
+
+
+

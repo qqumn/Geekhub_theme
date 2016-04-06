@@ -12,6 +12,9 @@
 
 <aside id="secondary" class="widget-area" role="complementary">
 	<div class="site-branding">
+		<h1 class="logo-header">
+			<a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_theme_mod('image', ''); ?>"/></a>
+		</h1>
 		<?php
 		if (is_front_page() && is_home()) : ?>
 			<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
