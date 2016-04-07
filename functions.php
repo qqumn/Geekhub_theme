@@ -7,6 +7,7 @@
  * @package ghtheme
  */
 
+
 if (!function_exists('ghtmeme_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -25,7 +26,25 @@ if (!function_exists('ghtmeme_setup')) :
          */
         load_theme_textdomain('ghtmeme', get_template_directory() . '/languages');
 
-        // Add default posts and comments RSS feed links to head.
+		if (file_exists(ABSPATH . '/wp-admin/includes/taxonomy.php')) :
+			require_once(ABSPATH . '/wp-admin/includes/taxonomy.php');
+
+			if (!category_exists('name')) :
+				wp_create_category('audio');
+				wp_create_category('forum');
+				wp_create_category('help');
+				wp_create_category('image');
+				wp_create_category('quotes');
+				wp_create_category('news');
+				wp_create_category('slideshow');
+				wp_create_category('video');
+
+			endif;// Category exists
+
+		endif;// File exists
+
+
+		// Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
 
         /*
@@ -594,7 +613,5 @@ function jss_taxonomy_name(){
 		echo ' '.$termphoto->name;
 	}
 }
-
-
 
 

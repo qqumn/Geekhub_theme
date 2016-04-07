@@ -14,6 +14,7 @@
 	<h1 class="sidebar-header">
 		<a href="<?php echo get_site_url(); ?>">
 			<img src="<?php echo get_theme_mod('image', ''); ?>"/>
+			
 		</a>
 	</h1>
 	<nav id="site-navigation" class="main-navigation" role="navigation">
