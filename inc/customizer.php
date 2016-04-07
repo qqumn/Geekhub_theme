@@ -100,6 +100,40 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'settings' => 'image',
 		'priority' => 1
 	)));
+
+	$wp_customize->add_section('header_colours', array(
+		'title' => __('Header colours', 'ghdev'),
+		'priority' => 120
+	));
+	$wp_customize->add_setting('header-bg', array(
+		'default' => '#db4437',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'head_bg_color',
+			array(
+				'label' => __('Header Background Color', 'ghdev'),
+				'section' => 'header_colours',
+				'settings' => 'header-bg',
+			))
+	);
+	$wp_customize->add_setting('header-text-color', array(
+		'default' => '#fff',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'head_txt_color',
+			array(
+				'label' => __('Header Text Color', 'ghdev'),
+				'section' => 'header_colours',
+				'settings' => 'header-text-color',
+			))
+	);
+
 }
 add_action( 'customize_register', 'ghtmeme_customize_register' );
 
