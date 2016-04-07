@@ -11,7 +11,7 @@ get_header(); ?>
                 <h3 class="page-title"><?php the_title() ?></h3>
                 <div id="options">
                     <?php
-                    if( function_exists( 'jss_gallery_tag_cloud' )) {
+                    if( function_exists( 'tag_cloud' )) {
                         jss_tag_cloud( $args = '' );
                     } else {
                         echo 'Something has gone terribly wrong here!';
@@ -32,9 +32,9 @@ get_header(); ?>
                     ?>
 
 
-                    <li class="element gallery-item <?php if( function_exists('jss_taxonomy_gallery')){ jss_taxonomy_gallery(); }?>">
+                    <li class="element gallery-item <?php if( function_exists('taxonomy_gallery')){ taxonomy_gallery(); }?>">
                         <div class="gallery-thumbnail">
-                        <a class="fancybox" rel="<?php if( function_exists('jss_taxonomy_gallery')){ jss_taxonomy_gallery(); }?>"
+                        <a class="fancybox" rel="<?php if( function_exists('taxonomy_gallery')){ taxonomy_gallery(); }?>"
                            href="
         		<?php
                            $image_id = get_post_thumbnail_id();
@@ -52,7 +52,7 @@ get_header(); ?>
                                     </h3>
                                 </a>
                                 <p class="feature-content"><?php the_content(); ?></p>
-                        <a href="<?php the_permalink(); ?>"><?php if( function_exists('jss_taxonomy_gallery')){ jss_taxonomy_gallery('', ' / ', ''); }?></a>
+                        <a href="<?php the_permalink(); ?>"><?php if( function_exists('taxonomy_gallery')){ taxonomy_gallery('', ' / ', ''); }?></a>
                     </li><!--end li-->
 
                 <?php endwhile; // end of the loop. ?>
