@@ -1,6 +1,63 @@
+$Open_Sans: 'Open Sans', sans-serif;
+
 .site-header {
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
   background-color: #db4437;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19);
+}
+
+.site-branding {
+  float: left;
+  width: 200px;
+  padding-right: 20px;
+  .site-title a{
+    display: inline-block;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    font-family: $Open_Sans;
+    font-weight: 600;
+    color: white;
+  }
+  .site-description {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+
+  }
+}
+.search-form {
+  float: left;
+  width: 50%;
+  .screen-reader-text, .search-submit {
+    display: none;
+  }
+  .search-field {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+  ::-webkit-input-placeholder {color:white;}
+  ::-moz-placeholder          {color:white;}/* Firefox 19+ */
+  :-moz-placeholder           {color:white;}/* Firefox 18- */
+  :-ms-input-placeholder      {color:white;}
+}
+
+.social-media-icons {
+  float: right;
+  li {
+    display: inline-block;
+    a {
+      margin: 5px;
+      color: white;
+      font-size: 16px;
+    }
+  }
 }

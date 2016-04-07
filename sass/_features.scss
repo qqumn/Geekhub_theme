@@ -1,0 +1,55 @@
+.features-block {
+  width: 95%;
+  border-top: 5px solid green;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+  .page-title {
+    margin: 20px 20px 10px;
+    font: 32px/35px $Open_Sans;
+    text-align: center;
+    color: #363636;
+  }
+}
+
+.features-list {
+  text-align: center;
+  padding-bottom: 30px;
+  li {
+    display: inline-block;
+    padding: 1.5%;
+    max-width: 200px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+  }
+  .feature-thumbnail {
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  .feature-title {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #363636;
+    word-wrap: break-word;
+  }
+  .read-more {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 10px;
+    background: #363636;
+    border-radius: 2px;
+    color: white;
+    &:hover {
+      background: green;
+    }
+  }
+}

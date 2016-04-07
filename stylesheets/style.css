@@ -207,15 +207,163 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 1, ../sass/_header.scss */
+/* line 3, ../sass/_header.scss */
 .site-header {
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
   background-color: #db4437;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19);
 }
 
-/* line 31, ../sass/style.scss */
+/* line 10, ../sass/_header.scss */
+.site-branding {
+  float: left;
+  width: 200px;
+  padding-right: 20px;
+}
+/* line 14, ../sass/_header.scss */
+.site-branding .site-title a {
+  display: inline-block;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+/* line 25, ../sass/_header.scss */
+.site-branding .site-description {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+/* line 32, ../sass/_header.scss */
+.search-form {
+  float: left;
+  width: 50%;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+/* line 35, ../sass/_header.scss */
+.search-form .screen-reader-text, .search-form .search-submit {
+  display: none;
+}
+/* line 38, ../sass/_header.scss */
+.search-form .search-field {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  color: white;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.12);
+}
+/* line 47, ../sass/_header.scss */
+.search-form ::-webkit-input-placeholder {
+  color: white;
+}
+/* line 48, ../sass/_header.scss */
+.search-form ::-moz-placeholder {
+  color: white;
+}
+/* line 49, ../sass/_header.scss */
+.search-form :-moz-placeholder {
+  color: white;
+}
+/* line 50, ../sass/_header.scss */
+.search-form :-ms-input-placeholder {
+  color: white;
+}
+
+/* line 53, ../sass/_header.scss */
+.social-media-icons {
+  float: right;
+}
+/* line 55, ../sass/_header.scss */
+.social-media-icons li {
+  display: inline-block;
+}
+/* line 57, ../sass/_header.scss */
+.social-media-icons li a {
+  margin: 5px;
+  color: white;
+  font-size: 16px;
+}
+
+/* line 1, ../sass/_features.scss */
+.features-block {
+  width: 95%;
+  border-top: 5px solid green;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+}
+/* line 6, ../sass/_features.scss */
+.features-block .page-title {
+  margin: 20px 20px 10px;
+  font: 32px/35px "Open Sans", sans-serif;
+  text-align: center;
+  color: #363636;
+}
+
+/* line 14, ../sass/_features.scss */
+.features-list {
+  text-align: center;
+  padding-bottom: 30px;
+}
+/* line 17, ../sass/_features.scss */
+.features-list li {
+  display: inline-block;
+  padding: 1.5%;
+  max-width: 200px;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: top;
+}
+/* line 25, ../sass/_features.scss */
+.features-list .feature-thumbnail {
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+/* line 31, ../sass/_features.scss */
+.features-list .feature-thumbnail img {
+  width: auto;
+  height: 100%;
+}
+/* line 36, ../sass/_features.scss */
+.features-list .feature-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #363636;
+  word-wrap: break-word;
+}
+/* line 43, ../sass/_features.scss */
+.features-list .read-more {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 10px;
+  background: #363636;
+  border-radius: 2px;
+  color: white;
+}
+/* line 51, ../sass/_features.scss */
+.features-list .read-more:hover {
+  background: green;
+}
+
+/* line 34, ../sass/style.scss */
+*:focus {
+  outline: none;
+}
+
+/* line 38, ../sass/style.scss */
 .container-elastic {
   max-width: 1170px;
   margin-left: auto;
@@ -232,16 +380,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   clear: both;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 a {
   text-decoration: none;
 }
-/* line 42, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 a:hover {
   cursor: pointer;
 }
 
-/* line 47, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 #primary {
   width: 83.05085%;
   float: left;
@@ -250,14 +398,14 @@ a:hover {
   margin-right: 0;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 #secondary {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 article.post {
   max-width: 30%;
   margin: 10px;
@@ -266,13 +414,13 @@ article.post {
   transition: max-width .6s ease;
 }
 @media (max-width: 1024px) {
-  /* line 56, ../sass/style.scss */
+  /* line 63, ../sass/style.scss */
   article.post {
     max-width: 45%;
   }
 }
 @media (max-width: 600px) {
-  /* line 56, ../sass/style.scss */
+  /* line 63, ../sass/style.scss */
   article.post {
     max-width: 90%;
   }

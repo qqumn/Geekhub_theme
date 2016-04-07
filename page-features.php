@@ -7,6 +7,7 @@ get_header(); ?>
         get_sidebar();
         ?>
         <div id="primary" class="content-area">
+            <div class="features-block">
             <main id="main" class="site-main" role="main">
                 <h3 class="page-title"><?php the_title() ?></h3>
                 <?php $query = new WP_Query(array('post_type' => 'features', 'posts_per_page' => 18)); ?>
@@ -24,7 +25,10 @@ get_header(); ?>
                                         <?php the_title(); ?>
                                     </h3>
                                     <div class="feature-text">
-                                        <?php the_content(); ?>
+<!--                                        --><?php //the_content(); ?>
+                                        <?php
+                                        echo wp_trim_words(get_the_content(), 20, '<div><a class="read-more" href="' . get_permalink() . '">Read more</a></div>');
+                                        ?>
                                     </div>
                                 </div>
                             </li>
@@ -35,6 +39,7 @@ get_header(); ?>
                 endif; ?>
                 <?php wp_reset_query(); ?>
             </main><!-- #main -->
+            </div><!--features-block-->
         </div><!-- #primary -->
 
     </div>
