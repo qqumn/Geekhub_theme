@@ -15,6 +15,7 @@
   text-align: center;
   padding-bottom: 30px;
   li {
+    margin: 10px 20px;
     display: inline-block;
     padding: 1.5%;
     max-width: 200px;
@@ -23,15 +24,20 @@
     vertical-align: top;
   }
   .feature-thumbnail {
+    position: relative;
     margin: 20px auto;
     width: 150px;
     height: 150px;
     border-radius: 100%;
     overflow: hidden;
-    img {
-      width: auto;
-      height: 100%;
-    }
+    //img {
+    //  position: absolute;
+    //  left: 50%;
+    //  top: 50%;
+    //  transform: translate(-50%, -50%);
+    //  width: 100%;
+    //  height: auto;
+    //}
   }
   .feature-title {
     margin-bottom: 10px;

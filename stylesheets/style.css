@@ -315,6 +315,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 17, ../sass/_features.scss */
 .features-list li {
+  margin: 10px 20px;
   display: inline-block;
   padding: 1.5%;
   max-width: 200px;
@@ -322,20 +323,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   vertical-align: top;
 }
-/* line 25, ../sass/_features.scss */
+/* line 26, ../sass/_features.scss */
 .features-list .feature-thumbnail {
+  position: relative;
   margin: 20px auto;
   width: 150px;
   height: 150px;
   border-radius: 100%;
   overflow: hidden;
 }
-/* line 31, ../sass/_features.scss */
-.features-list .feature-thumbnail img {
-  width: auto;
-  height: 100%;
-}
-/* line 36, ../sass/_features.scss */
+/* line 42, ../sass/_features.scss */
 .features-list .feature-title {
   margin-bottom: 10px;
   font-size: 15px;
@@ -343,7 +340,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #363636;
   word-wrap: break-word;
 }
-/* line 43, ../sass/_features.scss */
+/* line 49, ../sass/_features.scss */
 .features-list .read-more {
   margin-top: 20px;
   display: inline-block;
@@ -353,7 +350,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 2px;
   color: white;
 }
-/* line 51, ../sass/_features.scss */
+/* line 57, ../sass/_features.scss */
 .features-list .read-more:hover {
   background: green;
 }

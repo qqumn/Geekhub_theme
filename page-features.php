@@ -15,19 +15,16 @@ get_header(); ?>
                     <ul class="features-list">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
                             <li class="feature">
-                                <div class="feature-thumbnail">
-                                    <?php if (has_post_thumbnail()) {
-                                        the_post_thumbnail();
-                                    } ?>
-                                </div>
+                                    <?php if (has_post_thumbnail()) {?>
+                                        <div class="feature-thumbnail" style="background-image: url(<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID))[0]; ?>);"></div>
+                                    <?php } ?>
                                 <div class="feature-meta">
                                     <h3 class="feature-title">
                                         <?php the_title(); ?>
                                     </h3>
                                     <div class="feature-text">
-<!--                                        --><?php //the_content(); ?>
                                         <?php
-                                        echo wp_trim_words(get_the_content(), 20, '<div><a class="read-more" href="' . get_permalink() . '">Read more</a></div>');
+                                        echo wp_trim_words(get_the_content(), 20);
                                         ?>
                                     </div>
                                 </div>
