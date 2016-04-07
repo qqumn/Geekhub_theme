@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="PublishConfigData" serverName="https://github.com/qqumn/Geekhub_theme" uploadOnCheckin="7ef15841-892a-4ed0-baa9-266fa1415418">
-    <serverData>
-      <paths name="https://github.com/qqumn/Geekhub_theme">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-    </serverData>
     <option name="myUploadOnCheckinName" value="https://github.com/qqumn/Geekhub_theme" />
   </component>
 </project>

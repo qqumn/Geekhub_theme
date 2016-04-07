@@ -125,7 +125,6 @@ function ghtmeme_scripts()
     wp_enqueue_style('ghtmeme-portfolio-styles', get_template_directory_uri() . '/stylesheets/portfolio-styles.css');
     wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
-    wp_enqueue_script('ghtmeme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 
     wp_enqueue_script('ghtmeme-jquery', get_template_directory_uri() . '/js/jquery-1.4.3.min.js', array(), '20151215', true);
     wp_enqueue_script('ghtmeme-fancybox', get_template_directory_uri() . '/js/jquery.fancybox-1.3.4.js', array(), '20151215', true);
@@ -137,6 +136,7 @@ function ghtmeme_scripts()
 	wp_register_script( 'jquery', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",  array(), false, true );
 	wp_enqueue_script( 'jquery' );
 
+    wp_enqueue_script('ghtmeme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 	//register fancybox. change this to your local file.
 	wp_deregister_script( 'fancybox' );
 	wp_register_script( 'fancybox', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js",  array(), false, true );

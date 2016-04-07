@@ -18,7 +18,7 @@ get_header(); ?>
     get_sidebar();
     ?>
     <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+        <main id="main" class="site-main blog-page" role="main">
             <?php
             if (have_posts()) :
 
