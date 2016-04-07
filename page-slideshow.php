@@ -25,6 +25,8 @@ get_header(); ?>
                                             <?php the_title(); ?>
                                         </h3>
                                     </a>
+                                    <p class="feature-content"><?php the_content(); ?></p>
+                                    <a href="<?php the_permalink(); ?>"><?php if( function_exists('jss_taxonomy_gallery')){ jss_taxonomy_gallery('', ' / ', ''); }?></a>
                                 </div>
                             </li>
                         <?php endwhile; ?>

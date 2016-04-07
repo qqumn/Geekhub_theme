@@ -471,7 +471,6 @@ function jss_taxonomy_name(){
 }
 /*--------------*/
 /*GALLERY*/
-
 //----------------------------------------------
 //----------register and label gallery post type
 //----------------------------------------------
@@ -490,7 +489,7 @@ $gallery_labels = array(
 
 );
 $gallery_args = array(
-	'labels' => $gallery_type_labels,
+	'labels' => $gallery_labels,
 	'public' => true,
 	'publicly_queryable' => true,
 	'show_ui' => true,
@@ -502,21 +501,21 @@ $gallery_args = array(
 	'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'tags'),
 	'menu_icon' => get_bloginfo('template_directory') . '/images/photo-album.png' //16x16 png if you want an icon
 );
-register_post_type('gallery', $gallery_type_args);
+register_post_type('gallery', $gallery_args);
 
 
 //----------------------------------------------
 //------------------------create custom taxonomy
 //----------------------------------------------
-add_action( 'init', 'jss_create_gallery_type_taxonomies', 0);
+add_action( 'init', 'create_gallery_taxonomies', 0);
 
-function jss_create_gallery_type_taxonomies(){
+function create_gallery_taxonomies(){
 	register_taxonomy(
 		'gallerytype', 'gallery',
 		array(
 			'hierarchical'=> true,
-			'label' => 'Photo Types',
-			'singular_label' => 'Photo Type',
+			'label' => 'Gallery Types',
+			'singular_label' => 'Gallery Type',
 			'rewrite' => true
 		)
 	);
@@ -526,10 +525,10 @@ function jss_create_gallery_type_taxonomies(){
 //--------------------------admin custom columns
 //----------------------------------------------
 //admin_init
-add_action('manage_gallery_posts_custom_column', 'jss_custom_gallery_columns');
-add_filter('manage_edit-gallery_type_columns', 'add_new_gallery_type_columns');
+add_action('manage_posts_custom_column', 'custom_gellary_columns');
+add_filter('manage_edit-gallery_columns', 'add_new_gallery_columns');
 
-function jss_add_new_gallery_type_columns( $columns ){
+function add_new_gallery_columns( $columns ){
 	$columns = array(
 		'cb'				=>		'<input type="checkbox">',
 		'post_thumb'	=>		'Thumbnail',
@@ -542,7 +541,7 @@ function jss_add_new_gallery_type_columns( $columns ){
 	return $columns;
 }
 
-function jss_custom_gallery_columns( $column ){
+function custom_gellary_columns( $column ){
 	global $post;
 
 	switch ($column) {
@@ -553,17 +552,17 @@ function jss_custom_gallery_columns( $column ){
 }
 
 //add thumbnail images to column
-add_filter('manage_gallery_posts_columns', 'jss_add_post_thumbnail_gallery_column', 5);
-add_filter('manage_gallery_pages_columns', 'jss_add_post_thumbnail_gallery_column', 5);
-add_filter('manage_gallery_custom_post_columns', 'jss_add_post_thumbnail_gallery_column', 5);
+add_filter('manage_posts_columns', 'add_post_thumbnail_column', 5);
+add_filter('manage_pages_columns', 'add_post_thumbnail_column', 5);
+add_filter('manage_custom_post_columns', 'add_post_thumbnail_column', 5);
 
 // Add the column
-function jss_add_post_thumbnail_gallery_column($cols){
+function add_post_thumbnail_column($cols){
 	$cols['post_thumb'] = __('Thumbnail');
 	return $cols;
 }
 
-function jss_display_galery_post_thumbnail_column($col, $id){
+function display_post_thumbnail_columntag_cloud($col, $id){
 	switch($col){
 		case 'post_thumb':
 			if( function_exists('the_post_thumbnail') )
@@ -573,11 +572,12 @@ function jss_display_galery_post_thumbnail_column($col, $id){
 			break;
 	}
 }
+
 //----------------------------------------------
 //-------------------custom tag cloud generation
 //----------------------------------------------
 
-function jss_generate_gallery_tag_cloud( $tags, $args = '' ) {
+function generate_gallery_tag_cloud( $tags, $args = '' ) {
 	global $wp_rewrite;
 
 	//don't touch these defaults or the sky will fall
@@ -611,18 +611,18 @@ function jss_generate_gallery_tag_cloud( $tags, $args = '' ) {
 	$tags_sorted = apply_filters( 'tag_cloud_sort', $tags, $args );
 
 	//check to see if the tags have been pre-sorted
-	if ( $tags_gallery_sorted != $tags  ) { // the tags have been sorted by a plugin
-		$tags = $tags_gallery_sorted;
-		unset($tags_gallery_sorted);
+	if ( $tags_sorted != $tags  ) { // the tags have been sorted by a plugin
+		$tags = $tags_sorted;
+		unset($tags_sorted);
 	} else {
 		if ( 'RAND' == $order ) {
 			shuffle($tags);
 		} else {
 			// SQL cannot save you
 			if ( 'name' == $orderby )
-				uasort( $tags, create_function('$k, $n', 'return strnatcasecmp($a->name, $b->name);') );
+				uasort( $tags, create_function('$a, $b', 'return strnatcasecmp($a->name, $b->name);') );
 			else
-				uasort( $tags, create_function('$k, $n', 'return ($a->count > $b->count);') );
+				uasort( $tags, create_function('$a, $b', 'return ($a->count > $b->count);') );
 
 			if ( 'DESC' == $order )
 				$tags = array_reverse( $tags, true );
@@ -675,7 +675,7 @@ function jss_generate_gallery_tag_cloud( $tags, $args = '' ) {
 	//set new format
 	switch ( $format ) :
 		case 'array' :
-			$return =& $k;
+			$return =& $a;
 			break;
 		case 'list' :
 			//create our own setup of how it will display and add all
@@ -683,16 +683,16 @@ function jss_generate_gallery_tag_cloud( $tags, $args = '' ) {
 		<li><a href='filter' data-option-value='*' class='selected'>All</a></li>
 		<li>";
 			//join
-			$return .= join( "</li>\n\t<li>", $k );
+			$return .= join( "</li>\n\t<li>", $a );
 			$return .= "</li>\n</ul>\n";
 			break;
 		default :
 			//return
-			$return = join( $separator, $k );
+			$return = join( $separator, $a );
 			break;
 	endswitch;
 	//create new filter hook so we can do this
-	return apply_filters( 'jss_generate_gallery_tag_cloud', $return, $tags, $args );
+	return apply_filters( 'generate_tag_cloud', $return, $tags, $args );
 }
 
 //----------------------------------------------
@@ -700,7 +700,7 @@ function jss_generate_gallery_tag_cloud( $tags, $args = '' ) {
 //----------------------------------------------
 
 //the function below is very similar to 'wp_tag_cloud()' currently located in: 'wp-includes/category-template.php'
-function jss_gallery_tag_cloud( $args = '' ) {
+function tag_cloud( $args = '' ) {
 	//set some default
 	$defaults = array(
 		'format' => 'list', //display as list
@@ -751,7 +751,7 @@ function jss_gallery_tag_cloud( $args = '' ) {
 		$tags[ $key ] -> id = $tag -> term_id;
 	}
 	//generate our tag cloud
-	$return = jss_generate_gallery_tag_cloud( $tags, $args ); // here is where whe list what we are sorting
+	$return = generate_tag_cloud( $tags, $args ); // here is where whe list what we are sorting
 
 	//create a new filter hook
 	$return = apply_filters( 'tag_cloud', $return, $args );
@@ -768,14 +768,14 @@ add_filter('wp_tag_cloud', 'tag_cloud');
 //----------------------------------------------
 //-------------------------get CPT taxonomy name
 //----------------------------------------------
-function jss_taxonomy_gallery(){
+function taxonomy_gallery(){
 	global $post;
 
 	//get terms for CPT
 	$terms = get_the_terms( $post->ID , 'gallerytype' );
 	//iterate through array
-	foreach ( $terms as $termgalleryphoto ) {
+	foreach ( $terms as $termphoto ) {
 		//echo taxonomy name as class
-		echo ' '.$termgalleryphoto->name;
+		echo ' '.$termphoto->name;
 	}
 }
