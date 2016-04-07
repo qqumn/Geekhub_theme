@@ -22,9 +22,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'compass/reset';
 @import "susy";
 @import "_blog";
+@import "_sidebar";
+@import "_header";
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 .container-elastic {
   @include container(1170px);
+
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: #545454;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #primary {
@@ -42,7 +59,10 @@ article.post {
   box-sizing: border-box;
   float: left;
   transition: max-width .6s ease;
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     max-width: 45%;
+  }
+  @media (max-width: 600px) {
+    max-width: 90%;
   }
 }

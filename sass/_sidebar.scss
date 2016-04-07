@@ -1,0 +1,20 @@
+$Open_Sans: 'Open Sans', sans-serif;
+
+#secondary .menu {
+  li {
+    text-align: center;
+    a {
+      display: block;
+      padding: 10px;
+      color: #363636;
+      font-size: 15px;
+      font-family: $Open_Sans;
+      border-radius: 2px;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}

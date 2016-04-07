@@ -41,21 +41,21 @@ get_header(); ?>
                             } ?>
                         </div>
                         <h2 class="article-title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
-                        <div class="tags-block"><?php the_tags('', ' • ', ''); ?></div>
+                        <div class="tags-block"><?php the_tags('', ' / ', ''); ?></div>
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">
                         <?php
-                        echo wp_trim_words(get_the_content(), 55, '<a class="read-more" href="' . get_permalink() . '">Read more</a>');
+                        echo wp_trim_words(get_the_content(), 55, '<div><a class="read-more" href="' . get_permalink() . '">Read more</a></div>');
                         ?>
                     </div><!-- .entry-content -->
 
                     <footer class="entry-footer">
-                        <a class="post-footer-date" href="<?php the_permalink(); ?>"><span
-                                class="fa fa-clock"></span><?php the_date('d-m-Y') ?></a>
+                        <a class="post-footer-date" href="<?php the_permalink(); ?>">
+                        <span class="fa fa-clock-o"></span><?php the_date('d-m-Y') ?></a>
 
-                        <a class="post-footer-comments" href="<?php the_permalink(); ?>"><span
-                                class="fa fa-envelope"></span><?php comments_number('no comments', 'one comment', '% comments'); ?>
+                        <a class="post-footer-comments" href="<?php the_permalink(); ?>">
+                        <span class="fa fa-envelope"></span><?php comments_number('no comments', 'one comment', '% comments'); ?>
                         </a>
                     </footer><!-- .entry-footer -->
                     </article><!-- #post-## -->

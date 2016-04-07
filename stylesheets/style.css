@@ -19,6 +19,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 /* line 5, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -84,49 +85,145 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 1, ../sass/_blog.scss */
+/* line 4, ../sass/_blog.scss */
 .post-thumbnail {
   max-width: 100%;
 }
-/* line 3, ../sass/_blog.scss */
+/* line 6, ../sass/_blog.scss */
 .post-thumbnail img {
   width: 100%;
   height: auto;
 }
 
-/* line 9, ../sass/_blog.scss */
+/* line 12, ../sass/_blog.scss */
 .single-post {
   width: 100%;
 }
-/* line 11, ../sass/_blog.scss */
+/* line 14, ../sass/_blog.scss */
 .single-post .post-thumbnail {
   max-width: 100%;
   max-height: 400px;
   overflow: hidden;
 }
 
-/* line 19, ../sass/_blog.scss */
-.site-main article {
-  border-top: 5px solid red;
-}
 /* line 22, ../sass/_blog.scss */
+.site-main article.post {
+  border-top: 5px solid red;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+}
+/* line 27, ../sass/_blog.scss */
 .site-main .article-title {
-  margin: 20px 5px 10px;
-  font-size: 20px;
+  margin: 20px 20px 10px;
+  font: 32px/35px "Open Sans", sans-serif;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
+  word-wrap: break-word;
 }
-/* line 28, ../sass/_blog.scss */
+/* line 34, ../sass/_blog.scss */
 .site-main .article-title a {
+  color: #363636;
+}
+/* line 38, ../sass/_blog.scss */
+.site-main .entry-content {
+  margin: 20px;
+  text-align: left;
+}
+/* line 41, ../sass/_blog.scss */
+.site-main .entry-content div {
+  margin: 20px 10px 10px;
+  text-align: center;
+}
+/* line 44, ../sass/_blog.scss */
+.site-main .entry-content div .read-more {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 10px;
+  background: #363636;
+  border-radius: 2px;
+  color: white;
+}
+/* line 51, ../sass/_blog.scss */
+.site-main .entry-content div .read-more:hover {
+  background: red;
+}
+/* line 57, ../sass/_blog.scss */
+.site-main .tags-block {
+  margin: 10px 20px;
+  font-size: 12px;
+  text-align: center;
   text-decoration: none;
 }
+/* line 62, ../sass/_blog.scss */
+.site-main .tags-block a {
+  color: rgba(84, 84, 84, 0.7);
+}
+/* line 64, ../sass/_blog.scss */
+.site-main .tags-block a:hover {
+  color: #333;
+}
+/* line 69, ../sass/_blog.scss */
+.site-main .entry-footer {
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.07);
+}
+/* line 73, ../sass/_blog.scss */
+.site-main .entry-footer a {
+  color: #adadad;
+  transition: all .2s ease;
+}
+/* line 76, ../sass/_blog.scss */
+.site-main .entry-footer a:hover {
+  color: #545454;
+}
+/* line 80, ../sass/_blog.scss */
+.site-main .entry-footer .fa {
+  margin: 0 3px;
+}
+/* line 83, ../sass/_blog.scss */
+.site-main .entry-footer .fa-envelope {
+  margin-left: 10px;
+}
 
-/* line 26, ../sass/style.scss */
+/* line 4, ../sass/_sidebar.scss */
+#secondary .menu li {
+  text-align: center;
+}
+/* line 6, ../sass/_sidebar.scss */
+#secondary .menu li a {
+  display: block;
+  padding: 10px;
+  color: #363636;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 2px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+/* line 15, ../sass/_sidebar.scss */
+#secondary .menu li a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* line 1, ../sass/_header.scss */
+.site-header {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #db4437;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19);
+}
+
+/* line 31, ../sass/style.scss */
 .container-elastic {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: #545454;
+  line-height: 1.5;
 }
 /* line 12, ../../../../../../.rvm/gems/ruby-2.2.1/gems/susy-2.2.7/sass/susy/output/support/_clearfix.scss */
 .container-elastic:after {
@@ -135,7 +232,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   clear: both;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
+a {
+  text-decoration: none;
+}
+/* line 42, ../sass/style.scss */
+a:hover {
+  cursor: pointer;
+}
+
+/* line 47, ../sass/style.scss */
 #primary {
   width: 83.05085%;
   float: left;
@@ -144,14 +250,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 0;
 }
 
-/* line 35, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 #secondary {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 article.post {
   max-width: 30%;
   margin: 10px;
@@ -159,9 +265,15 @@ article.post {
   float: left;
   transition: max-width .6s ease;
 }
-@media (max-width: 800px) {
-  /* line 39, ../sass/style.scss */
+@media (max-width: 1024px) {
+  /* line 56, ../sass/style.scss */
   article.post {
     max-width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  /* line 56, ../sass/style.scss */
+  article.post {
+    max-width: 90%;
   }
 }
