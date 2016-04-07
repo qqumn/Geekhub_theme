@@ -1,0 +1,74 @@
+.options {
+    float: right;
+    display: block; }
+
+.content {
+    margin-left: 240px; }
+
+/*--------------------------------------------------------------------*/
+/*---------------------------------------->>>>>>>>>>>>>  Photo Gallery*/
+/*--------------------------------------------------------------------*/
+ul.photogal li {
+    width: 19.92%;
+    float: left; }
+ul.photogal li a {
+    width: 100%;
+    display: block; }
+ul.photogal li a img {
+    display: block;
+    max-width: 100.1%;
+    height: auto;
+    width: auto\9;
+    /* ie8 */ }
+
+ul#filters {
+    overflow: hidden;
+    width: auto;
+    margin: 20px 20px 0px 20px; }
+ul#filters li {
+    float: left;
+    margin: 0 0 15px 0; }
+ul#filters li a {
+    display: block;
+    background: #fff;
+    padding: 8px 10px;
+    width: auto;
+    text-decoration: none;
+    color: #f87242; }
+ul#filters li a:hover {
+    background: #f7f5f2;
+     }
+
+/*--------------------------------------------------------------------*/
+/*------------------------------------>>>>>>>>>>>>>  Isotope Animation*/
+/*--------------------------------------------------------------------*/
+.isotope,
+.isotope .isotope-item {
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -ms-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s; }
+
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    -ms-transition-property: height, width;
+    -o-transition-property: height, width;
+    transition-property: height, width; }
+
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity; }
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -ms-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s; }
