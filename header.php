@@ -17,7 +17,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <style type="text/css">
-        .fa, input {
+        header .fa, input {
             color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
         }
 

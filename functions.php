@@ -92,10 +92,10 @@ if (!function_exists('ghtmeme_setup')) :
         ));
 
         // Set up the WordPress core custom background feature.
-        add_theme_support('custom-background', apply_filters('ghtmeme_custom_background_args', array(
-            'default-color' => '#eee',
-            'default-image' => '',
-        )));
+//        add_theme_support('custom-background', apply_filters('ghtmeme_custom_background_args', array(
+//            'default-color' => '#eee',
+//            'default-image' => '',
+//        )));
     }
 endif;
 add_action('after_setup_theme', 'ghtmeme_setup');
@@ -187,11 +187,6 @@ function ghtmeme_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'ghtmeme_scripts');
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

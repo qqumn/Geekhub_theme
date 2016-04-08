@@ -13,7 +13,7 @@
 function ghtmeme_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
 
 	$wp_customize->add_section('my_social_settings', array(
 		'title' => __('Social Media Icons', 'text-domain'),
