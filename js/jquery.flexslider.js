@@ -162,9 +162,9 @@
           var type = (vars.controlNav === "thumbnails") ? 'control-thumbs' : 'control-paging',
               j = 1,
               item;
-          
-          slider.controlNavScaffold = $('<ol class="'+ namespace + 'control-nav ' + namespace + type + '"></ol>');
-          
+
+          slider.controlNavScaffold = $();
+
           if (slider.pagingCount > 1) {
             for (var i = 0; i < slider.pagingCount; i++) {
               item = (vars.controlNav === "thumbnails") ? '<img src="' + slider.slides.eq(i).attr("data-thumb") + '"/>' : '<a>' + j + '</a>';
