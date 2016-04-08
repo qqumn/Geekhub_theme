@@ -259,7 +259,7 @@ function my_social_media_icons()
 if ( function_exists( 'add_theme_support')){
 	add_theme_support( 'post-thumbnails' );
 }
-add_image_size( 'admin-list-thumb', 80, 80, true); //admin thumbnail preview
+add_image_size( 'admin-list-thumb', 150, 150, true); //admin thumbnail preview
 add_image_size( 'album-grid', 450, 450, true );
 
 //----------------------------------------------

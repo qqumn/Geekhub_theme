@@ -187,11 +187,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-left: 10px;
 }
 
-/* line 4, ../sass/_sidebar.scss */
+/* line 5, ../sass/_sidebar.scss */
 #secondary .menu li {
   text-align: center;
 }
-/* line 6, ../sass/_sidebar.scss */
+/* line 7, ../sass/_sidebar.scss */
 #secondary .menu li a {
   display: block;
   padding: 10px;
@@ -202,9 +202,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   letter-spacing: -1px;
   text-transform: uppercase;
 }
-/* line 15, ../sass/_sidebar.scss */
+/* line 16, ../sass/_sidebar.scss */
 #secondary .menu li a:hover {
   background: rgba(0, 0, 0, 0.05);
+}
+
+/* line 23, ../sass/_sidebar.scss */
+.sidebar-image {
+  display: block;
+  margin: 20px auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  overflow: hidden;
 }
 
 /* line 3, ../sass/_header.scss */
@@ -522,7 +532,7 @@ a:hover {
 .blog-page article.post {
   display: inline-block;
   vertical-align: top;
-  width: 100%;
+  width: 98%;
   margin: 10px;
   box-sizing: border-box;
   transition: max-width .6s ease;
