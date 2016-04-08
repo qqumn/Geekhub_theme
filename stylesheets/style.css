@@ -467,8 +467,92 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .contact-info {
   float: left;
   background: #fff;
-  padding: 40px;
-  border-top: 5px solid purple;
+  padding: 20px;
+  border-top: 5px solid #8ad903;
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+}
+
+/* line 9, ../sass/_contact.scss */
+.contact-info a {
+  color: #212121;
+}
+
+/* line 12, ../sass/_contact.scss */
+.contact-info .fa {
+  color: #8ad903;
+}
+
+/* line 17, ../sass/_contact.scss */
+.contact-form {
+  float: right;
+  background: #fff;
+  padding: 20px;
+  width: 300px;
+  border-top: 5px solid #c847ff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+  box-sizing: border-box;
+}
+
+/* line 18, ../sass/_contact.scss */
+.contact-form h2 {
+  font-size: 18px;
+}
+
+/* line 28, ../sass/_contact.scss */
+.contact-form input, .contact-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5px 0;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  color: #545454;
+  border-radius: 2px;
+  background: rgba(221, 221, 221, 0.12);
+}
+
+/* line 39, ../sass/_contact.scss */
+.contact-form button[type='submit'] {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  background: #c847ff;
+  border-radius: 2px;
+  border: none;
+  color: white;
+}
+
+/* line 47, ../sass/_contact.scss */
+.contact-form button[type='submit']:hover {
+  background: #b914ff;
+}
+
+/* line 51, ../sass/_contact.scss */
+.contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* line 55, ../sass/_contact.scss */
+.contact-form ::-webkit-input-placeholder {
+  color: #545454 !important;
+}
+
+/* line 58, ../sass/_contact.scss */
+.contact-form ::-moz-placeholder {
+  color: #545454 !important;
+}
+
+/* line 61, ../sass/_contact.scss */
+.contact-form :-moz-placeholder {
+  color: #545454 !important;
+}
+
+/* line 64, ../sass/_contact.scss */
+.contact-form :-ms-input-placeholder {
+  color: #545454 !important;
 }
 
 /* line 34, ../sass/style.scss */
