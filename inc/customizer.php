@@ -41,7 +41,7 @@ function ghtmeme_customize_register( $wp_customize ) {
 	}
 	/* 4.2 Footer data customizer */
 	$wp_customize->add_section('contact_data', array(
-		'title' => __('Contact data', 'ghdev'),
+		'title' => __('Contact data', 'ghtmeme'),
 		'priority' => 120
 	));
 	$wp_customize->add_setting('mail', array(
@@ -61,33 +61,33 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'transport' => 'refresh'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'mail-input', array(
-		'label' => __('Email', 'ghdev'),
+		'label' => __('Email', 'ghtmeme'),
 		'section' => 'contact_data',
 		'settings' => 'mail',
 		'priority' => 1
 	)));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'name-input', array(
-		'label' => __('Name', 'ghdev'),
+		'label' => __('Name', 'ghtmeme'),
 		'section' => 'contact_data',
 		'settings' => 'name',
 		'priority' => 1
 	)));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address-input', array(
-		'label' => __('Address', 'ghdev'),
+		'label' => __('Address', 'ghtmeme'),
 		'section' => 'contact_data',
 		'settings' => 'address',
 		'priority' => 1
 	)));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address-map', array(
-		'label' => __('Google maps link', 'ghdev'),
+		'label' => __('Google maps link', 'ghtmeme'),
 		'section' => 'contact_data',
 		'settings' => 'address-map',
 		'priority' => 1
 	)));
 
 	/* 4.3 header logo customizer */
-	$wp_customize->add_section('ghdev_logo', array(
-		'title' => __('Logo image', 'ghdev'),
+	$wp_customize->add_section('ghtmeme_logo', array(
+		'title' => __('Logo image', 'ghtmeme'),
 		'priority' => 120
 	));
 	$wp_customize->add_setting('image', array(
@@ -95,8 +95,8 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'transport' => 'refresh'
 	));
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
-		'label' => __('Logo image', 'ghdev'),
-		'section' => 'ghdev_logo',
+		'label' => __('Logo image', 'ghtmeme'),
+		'section' => 'ghtmeme_logo',
 		'settings' => 'image',
 		'priority' => 1
 	)));

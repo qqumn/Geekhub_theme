@@ -1,47 +1,56 @@
 <?php
-/*
-Template Name: Contact
- */
-?>
-<?php get_header(); ?>
-    <div class="container-elastic">
-        <?php
-        get_sidebar();
-        ?>
-        <div id="primary" class="content-area">
-            <main id="main" class="site-main" role="main">
-                <?php
-                if (have_posts()) :
+/*Template Name: Contact*/
 
-                    if (is_home() && !is_front_page()) : ?>
-                            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+get_header(); ?>
+        <div class="container-elastic">
+            <?php
+            get_sidebar();
+            ?>
+            <div id="primary" class="content-area">
+                    <main id="main" class="site-main" role="main">
+                            <ul class="contact-info">
+                                    <li id="contact-name"><?php echo get_theme_mod('name', ''); ?></li>
+                                    <li id="contact-address"><a
+                                                    href="<?php echo get_theme_mod('address-map', ''); ?>"><?php echo get_theme_mod('address', ''); ?></a>
+                                        </li>
+                                    <li id="contact-mail"><a
+                                                    href="mailto:<?php echo get_theme_mod('mail', ''); ?>"><?php echo get_theme_mod('mail', ''); ?></a>
+                                        </li>
+                                </ul>
+                            <div class="contact-form">
+                                <?php
+                                if (have_posts()) :
 
-                        <?php
-                    endif;
+                                    if (is_home() && !is_front_page()) : ?>
+                                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 
-                    /* Start the Loop */
-                    while (have_posts()) : the_post();
-                        ?>
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+                                        <?php
+                                    endif;
 
-                        <div class="entry-content">
-                            <?php the_content(); ?>
-                        </div><!-- .entry-content -->
+                                    /* Start the Loop */
+                                    while (have_posts()) : the_post();
+                                        ?>
+                                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 
-                        </article><!-- #post-## -->
-                    <?php endwhile;
+                                        <div class="entry-content">
+                                            <?php the_content(); ?>
+                                        </div><!-- .entry-content -->
 
-                    the_posts_navigation();
+                                        </article><!-- #post-## -->
+                                    <?php endwhile;
 
-                else :
+                                    the_posts_navigation();
 
-                    get_template_part('template-parts/content', 'none');
+                                else :
 
-                endif; ?>
+                                    get_template_part('template-parts/content', 'none');
 
-            </main><!-- #main -->
-        </div><!-- #primary -->
+                                endif; ?>
 
-    </div>
-<?php
+                            </div>
+                        </main><!-- #main -->
+                </div><!-- #primary -->
+
+        </div>
+    <?php
 get_footer();
