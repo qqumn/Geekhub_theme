@@ -61,7 +61,7 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'transport' => 'refresh'
 	));
 	$wp_customize->add_setting('address-iframe', array(
-		'default' => '',
+		'default' => '<iframe src="https://www.google.com/maps/d/embed?mid=z2N67GlBupFo.kmu8VpDq63ns" width="640" height="480"></iframe>',
 		'transport' => 'refresh'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'mail-input', array(
