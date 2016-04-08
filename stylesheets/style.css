@@ -20,7 +20,7 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
-/* line 5, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -42,45 +42,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+
+/* line 103, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -223,15 +224,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-bottom: 20px;
   background-color: #db4437;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19);
+  z-index: 999;
 }
 
-/* line 10, ../sass/_header.scss */
+/* line 11, ../sass/_header.scss */
 .site-branding {
   float: left;
   width: 200px;
   padding-right: 20px;
 }
-/* line 14, ../sass/_header.scss */
+
+/* line 15, ../sass/_header.scss */
 .site-branding .site-title a {
   display: inline-block;
   font-size: 18px;
@@ -243,25 +246,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: 600;
   color: white;
 }
-/* line 25, ../sass/_header.scss */
+
+/* line 26, ../sass/_header.scss */
 .site-branding .site-description {
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
 }
 
-/* line 32, ../sass/_header.scss */
+/* line 33, ../sass/_header.scss */
 .search-form {
   float: left;
   width: 50%;
   /* Firefox 19+ */
   /* Firefox 18- */
 }
-/* line 35, ../sass/_header.scss */
+
+/* line 36, ../sass/_header.scss */
 .search-form .screen-reader-text, .search-form .search-submit {
   display: none;
 }
-/* line 38, ../sass/_header.scss */
+
+/* line 39, ../sass/_header.scss */
 .search-form .search-field {
   width: 100%;
   border: none;
@@ -271,32 +277,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.12);
 }
-/* line 47, ../sass/_header.scss */
+
+/* line 48, ../sass/_header.scss */
 .search-form ::-webkit-input-placeholder {
   color: white;
 }
-/* line 48, ../sass/_header.scss */
+
+/* line 49, ../sass/_header.scss */
 .search-form ::-moz-placeholder {
   color: white;
 }
-/* line 49, ../sass/_header.scss */
+
+/* line 50, ../sass/_header.scss */
 .search-form :-moz-placeholder {
   color: white;
 }
-/* line 50, ../sass/_header.scss */
+
+/* line 51, ../sass/_header.scss */
 .search-form :-ms-input-placeholder {
   color: white;
 }
 
-/* line 53, ../sass/_header.scss */
+/* line 54, ../sass/_header.scss */
 .social-media-icons {
   float: right;
 }
-/* line 55, ../sass/_header.scss */
+
+/* line 56, ../sass/_header.scss */
 .social-media-icons li {
   display: inline-block;
 }
-/* line 57, ../sass/_header.scss */
+
+/* line 58, ../sass/_header.scss */
 .social-media-icons li a {
   margin: 5px;
   color: white;
@@ -462,6 +474,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: #4a30e9;
 }
 
+/* line 1, ../sass/_contact.scss */
+.contact-info {
+  float: left;
+  background: #fff;
+  padding: 40px;
+  border-top: 5px solid purple;
+}
+
 /* line 34, ../sass/style.scss */
 *:focus {
   outline: none;
@@ -477,7 +497,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #545454;
   line-height: 1.5;
 }
-/* line 12, ../../../../../../.rvm/gems/ruby-2.2.1/gems/susy-2.2.7/sass/susy/output/support/_clearfix.scss */
+
+/* line 12, ../../../../../../../../lib/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .container-elastic:after {
   content: " ";
   display: block;
@@ -536,4 +557,19 @@ a:hover {
   margin: 10px;
   box-sizing: border-box;
   transition: max-width .6s ease;
+}
+
+/* line 90, ../sass/style.scss */
+iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -100 !important;
+  width: 81% !important;
+  height: 100%;
+}
+
+/* line 97, ../sass/style.scss */
+iframe div {
+  display: none;
 }

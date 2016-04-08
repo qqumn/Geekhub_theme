@@ -9,7 +9,8 @@
  * @package ghtheme
  */
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -17,25 +18,58 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/stylesheets/flexslider.css"/>
+    <style type="text/css">
+        header > .container-elastic {
+            color: inherit !important;
+        }
 
+        .social-media-icons > li > a > .fa {
+            color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+        }
+
+        header .search-field {
+            color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+        }
+
+        ::-webkit-input-placeholder {
+            color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+        }
+
+        ::-moz-placeholder {
+            color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+        }
+
+        :-moz-placeholder {
+            color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+        }
+
+        :-ms-input-placeholder {
+            color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+        }
+    </style>
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header" role="banner"
+            style="
+                background-color :<?php echo get_theme_mod('header-bg', ''); ?>;
+                color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
+                ">
         <div class="container-elastic">
             <div class="site-branding">
-                <h1 class="logo-header">
-                    <a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_theme_mod('image', ''); ?>"/></a>
-                </h1>
                 <?php
                 if (is_front_page() && is_home()) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                              rel="home"><?php bloginfo('name'); ?></a></h1>
+                    <h1 class="site-title"><a
+                            style="color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;"
+                            href="<?php echo esc_url(home_url('/')); ?>"
+                            rel="home"><?php bloginfo('name'); ?></a></h1>
                 <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                             rel="home"><?php bloginfo('name'); ?></a></p>
+                    <p class="site-title"><a
+                            style="color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;"
+                            href="<?php echo esc_url(home_url('/')); ?>"
+                            rel="home"><?php bloginfo('name'); ?></a></p>
                     <?php
                 endif;
 
@@ -45,7 +79,7 @@
                     <?php
                 endif; ?>
             </div><!-- .site-branding -->
-<!--            <a class="skip-link screen-reader-text" href="#main"><span class="fa fa-chevron-down"></span></a>-->
+            <!--            <a class="skip-link screen-reader-text" href="#main"><span class="fa fa-chevron-down"></span></a>-->
             <?php get_search_form(true); ?>
             <?php my_social_media_icons() ?>
         </div>

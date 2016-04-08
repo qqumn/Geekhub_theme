@@ -60,6 +60,10 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'default' => '',
 		'transport' => 'refresh'
 	));
+	$wp_customize->add_setting('address-iframe', array(
+		'default' => '',
+		'transport' => 'refresh'
+	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'mail-input', array(
 		'label' => __('Email', 'ghdev'),
 		'section' => 'contact_data',
@@ -84,7 +88,12 @@ function ghtmeme_customize_register( $wp_customize ) {
 		'settings' => 'address-map',
 		'priority' => 1
 	)));
-
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'address-iframe', array(
+		'label' => __('Google maps iframe', 'ghdev'),
+		'section' => 'contact_data',
+		'settings' => 'address-iframe',
+		'priority' => 1
+	)));
 	/* 4.3 header logo customizer */
 	$wp_customize->add_section('ghdev_logo', array(
 		'title' => __('Logo image', 'ghdev'),
