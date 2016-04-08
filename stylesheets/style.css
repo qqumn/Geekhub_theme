@@ -69,7 +69,6 @@ caption, th, td {
 q, blockquote {
   quotes: none;
 }
-
 /* line 103, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
@@ -233,7 +232,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 200px;
   padding-right: 20px;
 }
-
 /* line 15, ../sass/_header.scss */
 .site-branding .site-title a {
   display: inline-block;
@@ -246,7 +244,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: 600;
   color: white;
 }
-
 /* line 26, ../sass/_header.scss */
 .site-branding .site-description {
   white-space: nowrap;
@@ -261,12 +258,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /* Firefox 19+ */
   /* Firefox 18- */
 }
-
 /* line 36, ../sass/_header.scss */
 .search-form .screen-reader-text, .search-form .search-submit {
   display: none;
 }
-
 /* line 39, ../sass/_header.scss */
 .search-form .search-field {
   width: 100%;
@@ -277,22 +272,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.12);
 }
-
 /* line 48, ../sass/_header.scss */
 .search-form ::-webkit-input-placeholder {
   color: white;
 }
-
 /* line 49, ../sass/_header.scss */
 .search-form ::-moz-placeholder {
   color: white;
 }
-
 /* line 50, ../sass/_header.scss */
 .search-form :-moz-placeholder {
   color: white;
 }
-
 /* line 51, ../sass/_header.scss */
 .search-form :-ms-input-placeholder {
   color: white;
@@ -302,12 +293,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .social-media-icons {
   float: right;
 }
-
 /* line 56, ../sass/_header.scss */
 .social-media-icons li {
   display: inline-block;
 }
-
 /* line 58, ../sass/_header.scss */
 .social-media-icons li a {
   margin: 5px;
@@ -497,7 +486,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #545454;
   line-height: 1.5;
 }
-
 /* line 12, ../../../../../../../../lib/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .container-elastic:after {
   content: " ";
@@ -568,7 +556,6 @@ iframe {
   width: 81% !important;
   height: 100%;
 }
-
 /* line 97, ../sass/style.scss */
 iframe div {
   display: none;
