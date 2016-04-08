@@ -4,8 +4,6 @@ $(document).ready(function () {
 
     $("a#single_image").fancybox();
 
-    alert('dfghjkl');
-
     /* Using custom settings */
 
     $("a#inline").fancybox({
@@ -14,7 +12,6 @@ $(document).ready(function () {
 
     /* Apply fancybox to multiple items */
 
-
     $("a.group").fancybox({
         'transitionIn': 'elastic',
         'transitionOut': 'elastic',
@@ -22,4 +19,5 @@ $(document).ready(function () {
         'speedOut': 200,
         'overlayShow': false
     });
+
 });

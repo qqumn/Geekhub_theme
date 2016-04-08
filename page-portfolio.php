@@ -10,11 +10,9 @@
             <main id="main" class="site-main" role="main">
                 <div id="options">
                     <?php
-                    //check to see if our custom tag cloud exists and display it
                     if( function_exists( 'jss_tag_cloud' )) {
                         jss_tag_cloud( $args = '' );
                     } else {
-                        //funny error message. probably need to replace this in your build.
                         echo 'Something has gone terribly wrong here!';
                     }
                     ?>
@@ -27,7 +25,7 @@
                         $wp_query = new WP_Query(
                             array(
                                 'posts_per_page'	=>	-1,
-                                'post_type'			=>	'gallery'
+                                'post_type'			=>	'portfolio_type'
                             )
                         );
 
