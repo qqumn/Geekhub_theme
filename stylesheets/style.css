@@ -615,13 +615,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   word-wrap: break-word;
   color: #fff;
 }
-/* line 22, ../sass/_slideshow.scss */
-.slideshow .slideshow-item .slideshow-rollover .feature-content p {
+/* line 21, ../sass/_slideshow.scss */
+.slideshow .slideshow-item .slideshow-rollover .feature-content {
   color: #efebeb;
 }
 
 @media (max-width: 320px) {
-  /* line 32, ../sass/_slideshow.scss */
+  /* line 31, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
     position: absolute;
     top: 0;
@@ -631,7 +631,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 10px;
     background: rgba(32, 32, 32, 0.8);
   }
-  /* line 40, ../sass/_slideshow.scss */
+  /* line 39, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover .feature-title {
     margin: 0;
   }
@@ -648,7 +648,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 @media (max: 768px) {
-  /* line 64, ../sass/_slideshow.scss */
+  /* line 65, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
     position: absolute;
     top: 20%;
@@ -657,13 +657,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 @media (max: 1024px) {
-  /* line 76, ../sass/_slideshow.scss */
+  /* line 78, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
     height: 170px;
   }
 }
 @media (max: 1024px) {
-  /* line 85, ../sass/_slideshow.scss */
+  /* line 88, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
     height: 200px;
   }
@@ -753,12 +753,99 @@ img.fancybox-image {
   width: 100%;
 }
 
-/* line 36, ../sass/style.scss */
+/*--------------------------------------------------------------------*/
+/*---------------------------------------->>>>>>>>>>>>>  Photo Gallery*/
+/*--------------------------------------------------------------------*/
+/* line 6, ../sass/_portfolio.scss */
+ul.photogal li {
+  width: 19.92%;
+  float: left;
+}
+/* line 9, ../sass/_portfolio.scss */
+ul.photogal li a {
+  width: 100.1%;
+  display: block;
+}
+/* line 13, ../sass/_portfolio.scss */
+ul.photogal li a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  /* ie8 */
+}
+
+/* line 24, ../sass/_portfolio.scss */
+ul#filters {
+  overflow: hidden;
+  margin: 20px 20px 0px 20px;
+}
+/* line 28, ../sass/_portfolio.scss */
+ul#filters li {
+  float: left;
+  margin: 0 0 15px 0;
+}
+/* line 32, ../sass/_portfolio.scss */
+ul#filters li a {
+  display: block;
+  background: #fff;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #f87242;
+}
+/* line 39, ../sass/_portfolio.scss */
+ul#filters li a:hover {
+  background: #f7f5f2;
+}
+
+/*--------------------------------------------------------------------*/
+/*------------------------------------>>>>>>>>>>>>>  Isotope Animation*/
+/*--------------------------------------------------------------------*/
+/* line 48, ../sass/_portfolio.scss */
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+
+/* line 58, ../sass/_portfolio.scss */
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+
+/* line 66, ../sass/_portfolio.scss */
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+}
+
+/* line 76, ../sass/_portfolio.scss */
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+
+/* line 37, ../sass/style.scss */
 *:focus {
   outline: none;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 .container-elastic {
   max-width: 1170px;
   margin-left: auto;
@@ -775,16 +862,16 @@ img.fancybox-image {
   clear: both;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 a {
   text-decoration: none;
 }
-/* line 51, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 a:hover {
   cursor: pointer;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 #primary {
   width: 83.05085%;
   float: left;
@@ -793,21 +880,21 @@ a:hover {
   margin-right: 0;
 }
 
-/* line 61, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 #secondary {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .blog-page {
   -moz-column-count: 3;
   -webkit-column-count: 3;
   width: 95%;
 }
 @media (max-width: 1024px) {
-  /* line 65, ../sass/style.scss */
+  /* line 66, ../sass/style.scss */
   .blog-page {
     -moz-column-count: 2;
     -webkit-column-count: 2;
@@ -815,14 +902,14 @@ a:hover {
   }
 }
 @media (max-width: 600px) {
-  /* line 65, ../sass/style.scss */
+  /* line 66, ../sass/style.scss */
   .blog-page {
     -moz-column-count: 1;
     -webkit-column-count: 1;
     width: 90%;
   }
 }
-/* line 79, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .blog-page article.post {
   display: inline-block;
   vertical-align: top;
@@ -832,7 +919,7 @@ a:hover {
   transition: max-width .6s ease;
 }
 
-/* line 89, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 iframe {
   position: absolute;
   top: 0;
@@ -841,7 +928,7 @@ iframe {
   width: 81% !important;
   height: 100%;
 }
-/* line 96, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 iframe div {
   display: none;
 }

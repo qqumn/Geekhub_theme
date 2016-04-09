@@ -21,12 +21,10 @@ get_header(); ?>
                                             } ?>
                                         </div>
                                         <div class="slideshow-rollover">
-                                            <a href="<?php the_permalink(); ?>" class="slideshow-link">
                                                 <h3 class="feature-title">
                                                     <?php the_title(); ?>
                                                 </h3>
-                                            </a>
-                                            <div class="feature-content"><?php echo the_excerpt(); ?></div>
+                                            <div class="feature-content"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
                                         </div>
                                     </li>
                                 <?php endwhile; ?>
