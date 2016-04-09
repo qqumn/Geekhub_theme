@@ -30,14 +30,15 @@
     height: 150px;
     border-radius: 100%;
     overflow: hidden;
-    //img {
-    //  position: absolute;
-    //  left: 50%;
-    //  top: 50%;
-    //  transform: translate(-50%, -50%);
-    //  width: 100%;
-    //  height: auto;
-    //}
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      height: auto;
+      min-height: 150px;
+    }
   }
   .feature-title {
     margin-bottom: 10px;
