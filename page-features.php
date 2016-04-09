@@ -25,9 +25,7 @@ get_header(); ?>
                                             <?php the_title(); ?>
                                         </h3>
                                         <div class="feature-text">
-                                            <!--                                        --><?php //the_content(); ?>
                                             <?php
-                                            echo wp_trim_words(get_the_content(), 20, '<div><a class="read-more" href="' . get_permalink() . '">Read more</a></div>');
                                             echo wp_trim_words(get_the_content(), 20);
                                             ?>
                                         </div>
