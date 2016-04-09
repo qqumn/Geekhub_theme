@@ -85,3 +85,26 @@ $Open_Sans: 'Open Sans', sans-serif;
     }
   }
 }
+.blog-page {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  width: 95%;
+  @media (max-width: 1024px) {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    width: 95%;
+  }
+  @media (max-width: 600px) {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    width: 90%;
+  }
+  article.post {
+    display: inline-block;
+    vertical-align: top;
+    width: 98%;
+    margin: 10px;
+    box-sizing: border-box;
+    transition: max-width .6s ease;
+  }
+}

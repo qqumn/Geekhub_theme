@@ -6,31 +6,27 @@ get_header(); ?>
         <?php
         get_sidebar();
         ?>
-        <div id="primary" class="content-area">
+        <div id="primary" class="content-area portfolio-full-width">
             <main id="main" class="site-main" role="main">
                 <section class="slider-wrapper">
                     <div class="flexslider">
-                        <h3 class="page-title"><?php the_title() ?></h3>
                         <?php $query = new WP_Query(array('post_type' => 'gallery', 'posts_per_page' => 24)); ?>
                         <?php if ($query->have_posts()) : ?>
-                            <ul class="gallery slides">
+                            <ul class="slideshow slides">
                                 <?php while ($query->have_posts()) : $query->the_post(); ?>
-                                    <li class="gallery-item">
-                                        <div class="gallery-thumbnail">
+                                    <li class="slideshow-item">
+                                        <div class="slideshow-thumbnail">
                                             <?php if (has_post_thumbnail()) {
                                                 the_post_thumbnail();
                                             } ?>
                                         </div>
-                                        <div class="gallery-rollover">
-                                            <a href="<?php the_permalink(); ?>" class="gallery-link">
+                                        <div class="slideshow-rollover">
+                                            <a href="<?php the_permalink(); ?>" class="slideshow-link">
                                                 <h3 class="feature-title">
                                                     <?php the_title(); ?>
                                                 </h3>
                                             </a>
-                                            <p class="feature-content"><?php the_content(); ?></p>
-                                            <a href="<?php the_permalink(); ?>"><?php if (function_exists('jss_taxonomy_gallery')) {
-                                                    jss_taxonomy_gallery('', ' / ', '');
-                                                } ?></a>
+                                            <div class="feature-content"><?php echo the_excerpt(); ?></div>
                                         </div>
                                     </li>
                                 <?php endwhile; ?>

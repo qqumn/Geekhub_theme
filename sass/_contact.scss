@@ -13,11 +13,7 @@
     color: #8ad903;
   }
 }
-
-.contact-form {
-  h2 {
-    font-size: 18px;
-  }
+.contact {
   float: right;
   background: #fff;
   padding: 20px;
@@ -25,43 +21,55 @@
   border-top: 5px solid #c847ff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
   box-sizing: border-box;
-  input, textarea {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 5px 0;
-    border: none;
-    padding: 10px;
-    font-size: 14px;
-    color: #545454;
-    border-radius: 2px;
-    background: rgba(#ddd, 0.12);
+  #response {
+    margin: 20px 0 10px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #c847ff;
   }
-  button[type='submit'] {
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 20px;
-    background: #c847ff;
-    border-radius: 2px;
-    border: none;
-    color: white;
-    &:hover {
-      background: darken(#c847ff, 10%);
+  .contact-form {
+    h2 {
+      font-size: 18px;
     }
-  }
-  textarea {
-    resize: none;
-    height: 120px;
-  }
-  ::-webkit-input-placeholder {
-    color: #545454 !important;
-  }
-  ::-moz-placeholder {
-    color: #545454 !important;
-  }
-  :-moz-placeholder {
-    color: #545454 !important;
-  }
-  :-ms-input-placeholder {
-    color: #545454 !important;
+    input, textarea {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 5px 0;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      color: #545454;
+      border-radius: 2px;
+      background: rgba(#ddd, 0.12);
+    }
+    button[type='submit'] {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 20px;
+      background: #c847ff;
+      border-radius: 2px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background: darken(#c847ff, 10%);
+      }
+    }
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+    ::-webkit-input-placeholder {
+      color: #545454 !important;
+    }
+    ::-moz-placeholder {
+      color: #545454 !important;
+    }
+    :-moz-placeholder {
+      color: #545454 !important;
+    }
+    :-ms-input-placeholder {
+      color: #545454 !important;
+    }
   }
 }

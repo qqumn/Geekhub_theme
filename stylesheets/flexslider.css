@@ -23,7 +23,7 @@
 *********************************/ 
 .flexslider {margin: 0; padding: 0;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {width: 100%; display: block;}
+.flexslider .slides img {width: 100%; height: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
@@ -50,11 +50,23 @@ html[xmlns] .slides {display: block;}
 /* Direction Nav */
 .flex-direction-nav {*height: 0;}
 .flex-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; background: url(../images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
-.flex-direction-nav .flex-next {background-position: 100% 0; left: 0;}
-.flex-direction-nav .flex-prev {left: 0}
-.flexslider:hover .flex-next {opacity: 0.9; left: 30px;}
-.flexslider:hover .flex-prev {opacity: 0.9; left: 5px;}
-.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;}
+@media (max-width: 320px) {
+	.flex-direction-nav a { top: 60%;}
+}
+@media (max-width: 480px) {
+	.flex-direction-nav a { top: 65%;}
+}
+@media (max-width: 768px) {
+	.flex-direction-nav a { top: 55%;}
+}
+@media (max-width: 1024px) {
+	.flex-direction-nav a { top: 50%;}
+}
+.flex-direction-nav .flex-next {background-position: 100% 0; left: 60px;}
+.flex-direction-nav .flex-prev {left: 30px}
+.flexslider .flex-next {opacity: 0.9; left: 300;}
+.flexslider .flex-prev {opacity: 0.9; left: 30px;}
+.flexslider .flex-next, .flexslider .flex-prev {opacity: 1;}
 .flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */
@@ -73,6 +85,6 @@ html[xmlns] .slides {display: block;}
 .flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
 
 @media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+  .flex-direction-nav .flex-prev {opacity: 1; left: 30px;}
   .flex-direction-nav .flex-next {opacity: 1; right: 0;}
 }
