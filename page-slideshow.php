@@ -22,9 +22,9 @@ get_header(); ?>
                                         </div>
                                         <div class="slideshow-rollover">
                                                 <h3 class="feature-title">
-                                                    <?php the_title(); ?>
+                                                    <?php trim_title_chars(10, ' ...'); ?>
                                                 </h3>
-                                            <div class="feature-content"><?php echo wp_trim_words(get_the_content(), 20); ?></div>
+                                            <div class="feature-content"><?php echo wp_trim_words(get_the_content(), 15); ?></div>
                                         </div>
                                     </li>
                                 <?php endwhile; ?>

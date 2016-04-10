@@ -62,6 +62,24 @@ a {
 #secondary {
   @include span(2 of 12);
 }
+@media (max-width: 320px) {
+  #primary {
+    @include span(12 of 12);
+  }
+
+  #secondary {
+    @include span(12 of 12);
+  }
+}
+@media (max-width: 480px) {
+  #primary {
+    @include span(12 of 12);
+  }
+
+  #secondary {
+    @include span(12 of 12);
+  }
+}
 
 .blog-page {
   -moz-column-count: 3;

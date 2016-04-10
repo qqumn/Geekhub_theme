@@ -15,6 +15,8 @@
 		<a class="sidebar-image" href="<?php echo get_site_url(); ?>" style="background: url(<?php echo get_theme_mod('image', ''); ?>); background-size: cover;"></a>
 	</h1>
 	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<label for="drop" class="toggle"><span class="fa fa-bars"></span>Nawigation</label>
+		<input type="checkbox" id="drop" />
 <!--		--><?php //_e('Navigation', 'ghtheme') ?>
 		<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
 	</nav><!-- #site-navigation -->
