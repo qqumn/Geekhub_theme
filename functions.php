@@ -113,7 +113,8 @@ function ghtmeme_scripts()
     wp_enqueue_style('ghtmeme-style-main', get_template_directory_uri() . '/stylesheets/style.css');
     wp_enqueue_style('ghtmeme-portfolio-styles', get_template_directory_uri() . '/stylesheets/portfolio-styles.css');
     wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-    wp_enqueue_style('flexslider', get_template_directory_uri() . 'stylesheets/flexslider.css');
+    wp_enqueue_style('flexslider', get_template_directory_uri() . '/stylesheets/flexslider.css');
+    wp_enqueue_style('menu', get_template_directory_uri() . '/stylesheets/menu.css');
     wp_enqueue_script('ghtmeme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
     wp_enqueue_script('ghtmeme-jquery', get_template_directory_uri() . '/js/jquery-1.4.3.min.js', array(), '20151215', true);
     wp_enqueue_script('ghtmeme-fancybox', get_template_directory_uri() . '/js/jquery.fancybox-1.3.4.js', array(), '20151215', true);
@@ -570,7 +571,7 @@ add_filter('wp_tag_cloud', 'jss_tag_cloud');
 //----------------------------------------------
 //-------------------------get CPT taxonomy name
 //----------------------------------------------
-function jss_taxonomy_name(){
+function jss_taxonomy_portfolio(){
     global $post;
 
     //get terms for CPT
@@ -945,3 +946,11 @@ function formCustom() {
     return $rty;
 }
 add_shortcode( 'formCustom', 'formCustom' );
+
+
+function trim_title_chars($count, $after) {
+    $title = get_the_title();
+    if (mb_strlen($title) > $count) $title = mb_substr($title,0,$count);
+    else $after = '';
+    echo $title . $after;
+}

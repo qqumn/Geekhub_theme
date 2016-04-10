@@ -10,7 +10,7 @@ get_header(); ?>
             <main id="main" class="site-main gallery-page" role="main">
                 <div id="options">
                     <?php
-                    if (function_exists('jss_tag_cloud')) {
+                    if (function_exists('jss_gallery_tag_cloud')) {
                         jss_tag_cloud($args = '');
                     } else {
                         echo 'Something has gone terribly wrong here!';

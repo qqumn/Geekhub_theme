@@ -3,7 +3,6 @@ $Open_Sans: 'Open Sans', sans-serif;
 #secondary {
   .menu {
     li {
-      text-align: center;
       a {
         display: block;
         padding: 10px;
@@ -15,6 +14,48 @@ $Open_Sans: 'Open Sans', sans-serif;
         text-transform: uppercase;
         &:hover {
           background: rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  #secondary {
+    .menu {
+      li {
+        text-align: center;
+        border-bottom: 1px solid #000;
+
+        &:first-child {
+          margin-top: 5px;
+        }
+        }
+      }
+    }
+  }
+@media (max-width: 480px) {
+  #secondary {
+    .menu {
+      li {
+        text-align: center;
+        border-bottom: 1px solid #000;
+
+        &:first-child {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  #secondary {
+    .menu {
+      li {
+        text-align: center;
+        border-bottom: 1px solid #000;
+
+        &:first-child {
+          margin-top: 5px;
         }
       }
     }
