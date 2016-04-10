@@ -571,7 +571,7 @@ add_filter('wp_tag_cloud', 'jss_tag_cloud');
 //----------------------------------------------
 //-------------------------get CPT taxonomy name
 //----------------------------------------------
-function jss_taxonomy_name(){
+function jss_taxonomy_portfolio(){
     global $post;
 
     //get terms for CPT

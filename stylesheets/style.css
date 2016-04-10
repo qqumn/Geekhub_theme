@@ -782,39 +782,171 @@ img.fancybox-image {
   width: 100%;
 }
 
+/* line 2, ../sass/_portfolio.scss */
+.portfolio-page ul.portfolio {
+  overflow: visible !important;
+}
+/* line 4, ../sass/_portfolio.scss */
+.portfolio-page ul.portfolio li {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  word-wrap: break-word;
+  z-index: 10;
+}
+/* line 10, ../sass/_portfolio.scss */
+.portfolio-page ul.portfolio li:hover {
+  z-index: 11;
+}
+/* line 12, ../sass/_portfolio.scss */
+.portfolio-page ul.portfolio li:hover .portfolio-rollover {
+  transform: translateX(0);
+  opacity: 1;
+}
+/* line 17, ../sass/_portfolio.scss */
+.portfolio-page ul.portfolio li:hover .portfolio-thumbnail img {
+  -webkit-filter: grayscale(0%);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* line 26, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-rollover {
+  position: absolute;
+  bottom: 10px;
+  left: -15%;
+  width: 150px;
+  border-right: 5px solid #1E90FF;
+  background: white;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  opacity: 0;
+  transition: all .5s ease;
+  z-index: 12;
+  transform: translateX(-10%);
+}
+/* line 39, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-rollover .portfolio-item-title {
+  overflow: hidden;
+  margin: 0;
+  margin-right: 70px;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+/* line 50, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-rollover .portfolio-item-content {
+  display: none;
+}
+/* line 53, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-rollover .portfolio-item-category {
+  padding: 3px 11px 0 1px;
+  margin: 6px 75px 0 0;
+  border-top: 1px solid #eaeaea;
+  background: none;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  text-align: left;
+  display: inline-block;
+  clear: both;
+}
+/* line 64, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-rollover .portfolio-item-category a {
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  vertical-align: top;
+  -moz-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  color: rgba(84, 84, 84, 0.7);
+}
+/* line 76, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-rollover .portfolio-item-category a:hover {
+  color: #000000;
+}
+/* line 82, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-thumbnail {
+  overflow: hidden;
+}
+/* line 84, ../sass/_portfolio.scss */
+.portfolio-page .portfolio-thumbnail img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg'&gt;&lt;filter id='grayscale'&gt;&lt;feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  transition: all .3s ease;
+  z-index: 10;
+}
+
+/* line 100, ../sass/_portfolio.scss */
+div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened {
+  position: relative;
+  transform: scale(0.8);
+  transition: transform 2s ease;
+  z-index: 101;
+}
+/* line 105, ../sass/_portfolio.scss */
+div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened:after {
+  content: "";
+  display: block;
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  width: 200vw;
+  height: 200vh;
+  background: rgba(8, 8, 8, 0.9);
+  z-index: -10;
+}
+
+/* line 118, ../sass/_portfolio.scss */
+img.fancybox-image {
+  width: 100%;
+}
+
 /*--------------------------------------------------------------------*/
 /*---------------------------------------->>>>>>>>>>>>>  Photo Gallery*/
 /*--------------------------------------------------------------------*/
-/* line 6, ../sass/_portfolio.scss */
+/* line 127, ../sass/_portfolio.scss */
 ul.photogal li {
   width: 19.92%;
   float: left;
 }
-/* line 9, ../sass/_portfolio.scss */
+/* line 130, ../sass/_portfolio.scss */
 ul.photogal li a {
   width: 100.1%;
   display: block;
 }
-/* line 13, ../sass/_portfolio.scss */
+/* line 134, ../sass/_portfolio.scss */
 ul.photogal li a img {
   display: block;
   max-width: 100%;
   height: auto;
-  width: auto\9;
+  width: auto \9 ;
   /* ie8 */
 }
 
-/* line 24, ../sass/_portfolio.scss */
+/* line 150, ../sass/_portfolio.scss */
 ul#filters {
   overflow: hidden;
   margin: 20px 20px 0px 20px;
 }
-/* line 28, ../sass/_portfolio.scss */
+/* line 154, ../sass/_portfolio.scss */
 ul#filters li {
   float: left;
   margin: 0 0 15px 0;
 }
-/* line 32, ../sass/_portfolio.scss */
+/* line 158, ../sass/_portfolio.scss */
 ul#filters li a {
   display: block;
   background: #fff;
@@ -822,7 +954,7 @@ ul#filters li a {
   text-decoration: none;
   color: #f87242;
 }
-/* line 39, ../sass/_portfolio.scss */
+/* line 165, ../sass/_portfolio.scss */
 ul#filters li a:hover {
   background: #f7f5f2;
 }
@@ -830,7 +962,7 @@ ul#filters li a:hover {
 /*--------------------------------------------------------------------*/
 /*------------------------------------>>>>>>>>>>>>>  Isotope Animation*/
 /*--------------------------------------------------------------------*/
-/* line 48, ../sass/_portfolio.scss */
+/* line 178, ../sass/_portfolio.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -840,7 +972,7 @@ ul#filters li a:hover {
   transition-duration: 0.8s;
 }
 
-/* line 58, ../sass/_portfolio.scss */
+/* line 188, ../sass/_portfolio.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
@@ -849,7 +981,7 @@ ul#filters li a:hover {
   transition-property: height, width;
 }
 
-/* line 66, ../sass/_portfolio.scss */
+/* line 196, ../sass/_portfolio.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
@@ -858,7 +990,7 @@ ul#filters li a:hover {
   transition-property: transform, opacity;
 }
 
-/* line 76, ../sass/_portfolio.scss */
+/* line 206, ../sass/_portfolio.scss */
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {
