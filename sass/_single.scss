@@ -1,0 +1,127 @@
+.post {
+  background: #ffffff;
+}
+
+.single-post {
+
+  .single-article-title {
+    margin: 20px auto 0;
+    text-align: center;
+    a {
+      padding: 0 20px 18px;
+      color: #363636;
+      font-weight: 400;
+      font-size: 38px;
+      letter-spacing: -3px;
+      line-height: 60px;
+    }
+  }
+  .entry-content {
+    color: #545454;
+    font-style: normal;
+    font-size: 12px;
+  }
+  .author-meta {
+    border-top: 1px solid #f4f4f4;
+    padding: 27px 0 29px;
+    .author-image {
+      width: 61px;
+      margin: 0 30px 0 34px;
+      float: left;
+      img {
+        padding: 7px;
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.1);
+        background: #fff;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+    }
+    .author-block {
+      height: 100%;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      padding: 11px 17px;
+      margin-right: 34px;
+      .author-name {
+        font-size: 13px;
+        color: #363636;
+        display: block;
+        margin-bottom: 6px;
+      }
+      .author-text {
+        color: #787878;
+      }
+    }
+  }
+  .postmeta {
+    padding: 8px 12px 6px 10px;
+    background-color: #fafafa;
+    -moz-box-shadow: inset 0px 10px 6px -10px rgba(0,0,0, 0.1);
+    -webkit-box-shadow: inset 0px 10px 6px -10px rgba(0,0,0, 0.1);
+    box-shadow: inset 0px 10px 6px -10px rgba(0,0,0, 0.1);
+  }
+}
+.content-area {
+
+  .postreply {
+    width: 100%;
+    margin: 20px 0;
+    padding: 35px 33px 31px 32px;
+    backgorund: #ffffff;
+    border-color: red;
+
+    .comments-area {
+      .comment-respond {
+        .comment-reply-title {
+          width: 200px;
+          margin: 40px auto 22px;
+          color: #363636;
+          font-weight: 400;
+          font-size: 23px;
+          line-height: 1;
+          letter-spacing: -2px;
+          padding-bottom: 16px;
+          text-align: center;
+          text-transform: uppercase;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+    .comment-respond {
+      width: 100%;
+
+    }
+    .comment-author {
+      img {
+        float: left;
+        margin-right: 10px;
+      }
+      b {
+        font-size: 14px;
+        color: #3b5998;
+        text-decoration: none;
+      }
+      span {
+        display: none;
+      }
+    }
+    .reply {
+      margin-left: 40px;
+    }
+    .comment-content {
+      margin-left: 43px;
+      p {
+        margin: 4px 0;
+        font-size: 14px;
+        color: #141823;
+      }
+    }
+    #comment {
+      width: 80%;
+    }
+  }
+}

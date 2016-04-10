@@ -6,9 +6,9 @@ get_header(); ?>
         <?php
         get_sidebar();
         ?>
-        <?php echo get_theme_mod('address-iframe', ''); ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main map-container" role="main">
+                <?php echo get_theme_mod('address-iframe', ''); ?>
                 <ul class="contact-info">
                     <li id="contact-name"><span class="fa fa-user"> </span> <?php echo get_theme_mod('name', ''); ?>
                     </li>

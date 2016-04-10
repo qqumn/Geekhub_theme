@@ -869,12 +869,148 @@ ul#filters li a:hover {
   transition-duration: 0s;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 1, ../sass/_single.scss */
+.post {
+  background: #ffffff;
+}
+
+/* line 7, ../sass/_single.scss */
+.single-post .single-article-title {
+  margin: 20px auto 0;
+  text-align: center;
+}
+/* line 10, ../sass/_single.scss */
+.single-post .single-article-title a {
+  padding: 0 20px 18px;
+  color: #363636;
+  font-weight: 400;
+  font-size: 38px;
+  letter-spacing: -3px;
+  line-height: 60px;
+}
+/* line 19, ../sass/_single.scss */
+.single-post .entry-content {
+  color: #545454;
+  font-style: normal;
+  font-size: 12px;
+}
+/* line 24, ../sass/_single.scss */
+.single-post .author-meta {
+  border-top: 1px solid #f4f4f4;
+  padding: 27px 0 29px;
+}
+/* line 27, ../sass/_single.scss */
+.single-post .author-meta .author-image {
+  width: 61px;
+  margin: 0 30px 0 34px;
+  float: left;
+}
+/* line 31, ../sass/_single.scss */
+.single-post .author-meta .author-image img {
+  padding: 7px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 43, ../sass/_single.scss */
+.single-post .author-meta .author-block {
+  height: 100%;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  padding: 11px 17px;
+  margin-right: 34px;
+}
+/* line 49, ../sass/_single.scss */
+.single-post .author-meta .author-block .author-name {
+  font-size: 13px;
+  color: #363636;
+  display: block;
+  margin-bottom: 6px;
+}
+/* line 55, ../sass/_single.scss */
+.single-post .author-meta .author-block .author-text {
+  color: #787878;
+}
+/* line 60, ../sass/_single.scss */
+.single-post .postmeta {
+  padding: 8px 12px 6px 10px;
+  background-color: #fafafa;
+  -moz-box-shadow: inset 0px 10px 6px -10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0px 10px 6px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 10px 6px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* line 70, ../sass/_single.scss */
+.content-area .postreply {
+  width: 100%;
+  margin: 20px 0;
+  padding: 35px 33px 31px 32px;
+  backgorund: #ffffff;
+  border-color: red;
+}
+/* line 79, ../sass/_single.scss */
+.content-area .postreply .comments-area .comment-respond .comment-reply-title {
+  width: 200px;
+  margin: 40px auto 22px;
+  color: #363636;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: -2px;
+  padding-bottom: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+}
+/* line 94, ../sass/_single.scss */
+.content-area .postreply .comment-respond {
+  width: 100%;
+}
+/* line 99, ../sass/_single.scss */
+.content-area .postreply .comment-author img {
+  float: left;
+  margin-right: 10px;
+}
+/* line 103, ../sass/_single.scss */
+.content-area .postreply .comment-author b {
+  font-size: 14px;
+  color: #3b5998;
+  text-decoration: none;
+}
+/* line 108, ../sass/_single.scss */
+.content-area .postreply .comment-author span {
+  display: none;
+}
+/* line 112, ../sass/_single.scss */
+.content-area .postreply .reply {
+  margin-left: 40px;
+}
+/* line 115, ../sass/_single.scss */
+.content-area .postreply .comment-content {
+  margin-left: 43px;
+}
+/* line 117, ../sass/_single.scss */
+.content-area .postreply .comment-content p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #141823;
+}
+/* line 123, ../sass/_single.scss */
+.content-area .postreply #comment {
+  width: 80%;
+}
+
+/* line 38, ../sass/style.scss */
 *:focus {
   outline: none;
 }
 
-/* line 41, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .container-elastic {
   max-width: 1170px;
   margin-left: auto;
@@ -891,16 +1027,22 @@ ul#filters li a:hover {
   clear: both;
 }
 
-/* line 50, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 a {
   text-decoration: none;
 }
-/* line 52, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 a:hover {
   cursor: pointer;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
+body {
+  background: url("../images/content_bg.png") no-repeat fixed right top;
+  background-size: cover;
+}
+
+/* line 62, ../sass/style.scss */
 #primary {
   width: 83.05085%;
   float: left;
@@ -909,7 +1051,7 @@ a:hover {
   margin-right: 0;
 }
 
-/* line 62, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 #secondary {
   width: 15.25424%;
   float: left;
@@ -917,7 +1059,7 @@ a:hover {
 }
 
 @media (max-width: 320px) {
-  /* line 66, ../sass/style.scss */
+  /* line 71, ../sass/style.scss */
   #primary {
     width: 100%;
     float: left;
@@ -925,7 +1067,7 @@ a:hover {
     margin-right: 0;
   }
 
-  /* line 70, ../sass/style.scss */
+  /* line 75, ../sass/style.scss */
   #secondary {
     width: 100%;
     float: left;
@@ -934,7 +1076,7 @@ a:hover {
   }
 }
 @media (max-width: 480px) {
-  /* line 75, ../sass/style.scss */
+  /* line 80, ../sass/style.scss */
   #primary {
     width: 100%;
     float: left;
@@ -942,7 +1084,7 @@ a:hover {
     margin-right: 0;
   }
 
-  /* line 79, ../sass/style.scss */
+  /* line 84, ../sass/style.scss */
   #secondary {
     width: 100%;
     float: left;
@@ -950,14 +1092,14 @@ a:hover {
     margin-right: 0;
   }
 }
-/* line 84, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 .blog-page {
   -moz-column-count: 3;
   -webkit-column-count: 3;
   width: 95%;
 }
 @media (max-width: 1024px) {
-  /* line 84, ../sass/style.scss */
+  /* line 89, ../sass/style.scss */
   .blog-page {
     -moz-column-count: 2;
     -webkit-column-count: 2;
@@ -965,14 +1107,14 @@ a:hover {
   }
 }
 @media (max-width: 600px) {
-  /* line 84, ../sass/style.scss */
+  /* line 89, ../sass/style.scss */
   .blog-page {
     -moz-column-count: 1;
     -webkit-column-count: 1;
     width: 90%;
   }
 }
-/* line 98, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .blog-page article.post {
   display: inline-block;
   vertical-align: top;
@@ -982,7 +1124,7 @@ a:hover {
   transition: max-width .6s ease;
 }
 
-/* line 108, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 iframe {
   position: absolute;
   top: 0;
@@ -991,7 +1133,7 @@ iframe {
   width: 81% !important;
   height: 100%;
 }
-/* line 115, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 iframe div {
   display: none;
 }

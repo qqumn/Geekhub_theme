@@ -31,6 +31,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "_slideshow";
 @import "_gallery";
 @import "_portfolio";
+@import "_single";
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
@@ -54,6 +55,10 @@ a {
   }
 }
 
+body {
+  background: url('../images/content_bg.png') no-repeat fixed right top;
+  background-size: cover;
+}
 #primary {
   @include span(10 of 12);
   @include last;
