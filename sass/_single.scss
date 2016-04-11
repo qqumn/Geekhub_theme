@@ -1,15 +1,16 @@
 .post {
-  background: #ffffff;
+  background: #232323;
 }
 
 .single-post {
 
   .single-article-title {
     margin: 20px auto 0;
-    text-align: center;
+    text-align: left;
+    float: left;
     a {
       padding: 0 20px 18px;
-      color: #363636;
+      color: lighten(#363636, 50%);
       font-weight: 400;
       font-size: 38px;
       letter-spacing: -3px;
@@ -19,75 +20,64 @@
   .entry-content {
     color: #545454;
     font-style: normal;
-    font-size: 12px;
+    font-size: 14px;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-bottom: 2px solid lighten(#363636, 50%);
   }
-  .author-meta {
-    border-top: 1px solid #f4f4f4;
-    padding: 27px 0 29px;
-    .author-image {
-      width: 61px;
-      margin: 0 30px 0 34px;
-      float: left;
-      img {
-        padding: 7px;
-        border: 1px solid #e6e6e6;
-        border-radius: 3px;
-        box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.1);
-        background: #fff;
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-    }
-    .author-block {
-      height: 100%;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      padding: 11px 17px;
-      margin-right: 34px;
-      .author-name {
-        font-size: 13px;
-        color: #363636;
-        display: block;
-        margin-bottom: 6px;
-      }
-      .author-text {
-        color: #787878;
-      }
-    }
-  }
+
   .postmeta {
     padding: 8px 12px 6px 10px;
     background-color: #fafafa;
-    -moz-box-shadow: inset 0px 10px 6px -10px rgba(0,0,0, 0.1);
-    -webkit-box-shadow: inset 0px 10px 6px -10px rgba(0,0,0, 0.1);
-    box-shadow: inset 0px 10px 6px -10px rgba(0,0,0, 0.1);
+    -moz-box-shadow: inset 0px 10px 6px -10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0px 10px 6px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 10px 6px -10px rgba(0, 0, 0, 0.1);
   }
 }
-.content-area {
 
+.author-meta {
+  float: left;
+  margin-top: 50px;
+  .author-name {
+    color: lighten(#363636, 50%);
+  }
+}
+
+.content-area {
+  label {
+    display: none;
+  }
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    margin: 10px 0;
+    color: white;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    resize: none;
+  }
   .postreply {
     width: 100%;
+    overflow: hidden;
     margin: 20px 0;
-    padding: 35px 33px 31px 32px;
-    backgorund: #ffffff;
     border-color: red;
-
+    a {
+      color: lighten(#363636, 50%);
+    }
     .comments-area {
       .comment-respond {
         .comment-reply-title {
-          width: 200px;
-          margin: 40px auto 22px;
-          color: #363636;
-          font-weight: 400;
-          font-size: 23px;
-          line-height: 1;
-          letter-spacing: -2px;
-          padding-bottom: 16px;
-          text-align: center;
+          color: lighten(#363636, 50%);
+          font-weight: 300;
+          font-size: 20px;
+          text-align: left;
           text-transform: uppercase;
-          border-bottom: 1px solid #ccc;
         }
       }
     }
@@ -99,11 +89,6 @@
       img {
         float: left;
         margin-right: 10px;
-      }
-      b {
-        font-size: 14px;
-        color: #3b5998;
-        text-decoration: none;
       }
       span {
         display: none;
@@ -117,11 +102,39 @@
       p {
         margin: 4px 0;
         font-size: 14px;
-        color: #141823;
       }
     }
     #comment {
       width: 80%;
+    }
+    #comments {
+      float: left;
+      width: 100%;
+    }
+    .comments-title {
+      color: lighten(#363636, 50%);
+      font-size: 20px;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: 300;
+      padding: 20px 20px 0;
+    }
+    .comment-list {
+      padding: 0 20px 20px;
+    }
+    #respond {
+      widht: 100%;
+      padding: 20px;
+      border-top: 2px solid lighten(#363636, 50%);
+    }
+    #submit {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 14px;
+      background: #8b8b8b;
+      border-radius: 2px;
+      color: #fff;
+      border: none;
     }
   }
 }

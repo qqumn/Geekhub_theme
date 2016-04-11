@@ -18,7 +18,14 @@ $j(document).ready(function() {
         }
     }
 	});
+	$j(document).ready(function ($) {
+		$j('.fa-bars').on('click', function () {
+			$('#site-navigation ').toggle();
+			$('#site-navigation ').css('height', '100%');
+		})
+		$j("a.fancybox").fancybox();
 
+	});
 	//----------------------------------------------
 	//---------------------------------------isotope
 	//----------------------------------------------

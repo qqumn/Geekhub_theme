@@ -21,7 +21,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 @import 'compass/reset';
 @import "susy";
-
 @import "_blog";
 @import "_sidebar";
 @import "_header";
@@ -33,7 +32,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "_portfolio";
 @import "_single";
 @import "_404";
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 *:focus {
@@ -42,7 +40,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .container-elastic {
   @include container(1170px);
-
   font-size: 12px;
   font-family: Arial, sans-serif;
   color: #545454;
@@ -57,9 +54,10 @@ a {
 }
 
 body {
-  background: url('../images/content_bg.png') no-repeat fixed right top;
-  background-size: cover;
+  background-color: #323335;
+
 }
+
 #primary {
   @include span(10 of 12);
   @include last;
@@ -68,22 +66,28 @@ body {
 #secondary {
   @include span(2 of 12);
 }
-@media (max-width: 320px) {
+
+@media screen and (max-width: 320px) {
   #primary {
     @include span(12 of 12);
+    @include last;
   }
 
   #secondary {
     @include span(12 of 12);
+    @include last;
   }
 }
-@media (max-width: 480px) {
+
+@media screen and (max-width: 768px) {
   #primary {
     @include span(12 of 12);
+    @include last;
   }
 
   #secondary {
     @include span(12 of 12);
+    @include last;
   }
 }
 
@@ -121,4 +125,9 @@ iframe {
   div {
     display: none;
   }
+
+  iframe {
+    display: none;
+  }
+
 }

@@ -7,58 +7,35 @@ get_header(); ?>
         get_sidebar();
         ?>
         <div id="primary" class="content-area">
-            <main id="main" class="site-main gallery-page" role="main">
-                <div id="options">
-                    <?php
-                    if (function_exists('jss_gallery_tag_cloud')) {
-                        jss_tag_cloud($args = '');
-                    } else {
-                        echo 'Something has gone terribly wrong here!';
-                    }
-                    ?>
-                </div>
-                <ul class="gallery photogal">
-                    <?php
-                    $wp_query = new WP_Query(
-                        array(
-                            'posts_per_page' => -1,
-                            'post_type' => 'gallery'
-                        )
-                    );
-
-                    //begine loop
-                    while ($wp_query->have_posts()) : $wp_query->the_post();
-                        ?>
-
-
-                        <li class="element gallery-item <?php if (function_exists('jss_taxonomy_gallery')) {
-                            jss_taxonomy_gallery();
-                        } ?>">
-                            <div class="gallery-thumbnail">
-                                <a class="fancybox" rel="<?php if (function_exists('jss_taxonomy_gallery')) {
-                                    jss_taxonomy_gallery();
-                                } ?>"
-                                   href="
-                               <?php
-                                   $image_id = get_post_thumbnail_id();
-                                   $image_url = wp_get_attachment_image_src($image_id, '', true);
-                                   echo $image_url[0];
-                                   ?>">
-                                    <?php the_post_thumbnail(); ?>
+            <ul class="cats"><?php wp_list_categories(array(
+                    'taxonomy' => 'gallery_cats',//cats,kitties,kittens
+                    'hide_empty' => false,
+                    'title_li' => ''
+                )) ?></ul>
+            <?php $query = new WP_Query(array('post_type' => 'gallery', 'posts_per_page' => 18)); ?>
+            <?php if ($query->have_posts()) : ?>
+                <ul class="gallery-showcase">
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <li class="gallery-pic">
+                            <a href="<?php the_permalink() ?>" class="fancybox">
+                                <?php if (has_post_thumbnail(array(240, 240))) {
+                                    the_post_thumbnail();
+                                } ?>
+                                <div class="rollover">
+                                    <h3 class="item-title">
+                                        <?php the_title(); ?>
+                                    </h3>
+                                </div>
                                 </a>
-                            </div>
-                            <div class="gallery-rollover">
-                                <a href="<?php the_permalink(); ?>" class="gallery-link">
-                                    <h3 class="gallery-item-title"><?php the_title(); ?></h3>
-                                </a>
-                                <p class="gallery-item-content"><?php echo wp_trim_words(get_the_content(), 2); ?></p>
-                        </li><!--end li-->
-
-                    <?php endwhile; // end of the loop. ?>
-
-        </div><!--end content-->
-        </main><!-- #main -->
-    </div><!-- #primary -->
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php else :
+                get_template_part('template-parts/content', 'none');
+            endif; ?>
+            <?php wp_reset_query(); ?>
+            </main><!-- #main -->
+        </div><!-- #primary -->
 
     </div>
 <?php

@@ -45,11 +45,22 @@
         :-ms-input-placeholder {
             color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
         }
+
+        body {
+            background-color: <?php echo get_theme_mod('site-bg', ''); ?> !important;
+        }
+
+        #primary p {
+            color: <?php echo get_theme_mod('site-text-color', ''); ?> !important;
+        }
     </style>
+    <script>
+
+    </script>
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 <div id="page" class="site">
     <header id="masthead" class="site-header" role="banner"
             style="
@@ -57,29 +68,31 @@
                 color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;
                 ">
         <div class="container-elastic">
-            <div class="site-branding">
-                <?php
-                if (is_front_page() && is_home()) : ?>
-                    <h1 class="site-title"><a
-                            style="color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;"
-                            href="<?php echo esc_url(home_url('/')); ?>"
-                            rel="home"><?php bloginfo('name'); ?></a></h1>
-                <?php else : ?>
-                    <p class="site-title"><a
-                            style="color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;"
-                            href="<?php echo esc_url(home_url('/')); ?>"
-                            rel="home"><?php bloginfo('name'); ?></a></p>
+            <div class="container-left">
+                <div class="site-branding">
                     <?php
-                endif;
+                    if (is_front_page() && is_home()) : ?>
+                        <h1 class="site-title"><a
+                                style="color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;"
+                                href="<?php echo esc_url(home_url('/')); ?>"
+                                rel="home"><?php bloginfo('name'); ?></a></h1>
+                    <?php else : ?>
+                        <p class="site-title"><a
+                                style="color: <?php echo get_theme_mod('header-text-color', ''); ?> !important;"
+                                href="<?php echo esc_url(home_url('/')); ?>"
+                                rel="home"><?php bloginfo('name'); ?></a></p>
+                        <?php
+                    endif;
 
-                $description = get_bloginfo('description', 'display');
-                if ($description || is_customize_preview()) : ?>
-                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                    <?php
-                endif; ?>
-            </div><!-- .site-branding -->
-            <!--            <a class="skip-link screen-reader-text" href="#main"><span class="fa fa-chevron-down"></span></a>-->
-            <?php get_search_form(true); ?>
+                    $description = get_bloginfo('description', 'display');
+                    if ($description || is_customize_preview()) : ?>
+                        <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                        <?php
+                    endif; ?>
+                </div><!-- .site-branding -->
+                <!--            <a class="skip-link screen-reader-text" href="#main"><span class="fa fa-chevron-down"></span></a>-->
+                <?php get_search_form(true); ?>
+            </div>
             <?php my_social_media_icons() ?>
         </div>
     </header><!-- #masthead -->

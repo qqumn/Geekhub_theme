@@ -143,6 +143,41 @@ function ghtmeme_customize_register( $wp_customize ) {
 			))
 	);
 
+
+	$wp_customize->add_section('site_colours', array(
+		'title' => __('Colors', 'ghdev'),
+		'priority' => 120
+	));
+	$wp_customize->add_setting('site-bg', array(
+		'default' => '#323335',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'site_bg_colour',
+			array(
+				'label' => __('Header Background Color', 'ghdev'),
+				'section' => 'site_colours',
+				'settings' => 'site-bg',
+			))
+	);
+	$wp_customize->add_setting('site-text-color', array(
+		'default' => '#363636',
+		'transport' => 'refresh'
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'site_text_colour',
+			array(
+				'label' => __('Site Text Color', 'ghdev'),
+				'section' => 'site_colours',
+				'settings' => 'site-text-color',
+			))
+	);
+
+
 }
 add_action( 'customize_register', 'ghtmeme_customize_register' );
 
@@ -158,10 +193,3 @@ function my_customizer_social_media_array()
 
 
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function ghtmeme_customize_preview_js() {
-	wp_enqueue_script( 'ghtmeme_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
-}
-add_action( 'customize_preview_init', 'ghtmeme_customize_preview_js' );
