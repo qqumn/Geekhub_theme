@@ -9,7 +9,7 @@ $video-color: #725eee;
 
 .site-main {
   article.category-audio {
-    border-top: 5px solid $audio-color;
+    border-top: 7px solid $audio-color;
     .read-more {
       background: $audio-color;
       &:hover {
@@ -18,7 +18,7 @@ $video-color: #725eee;
     }
   }
   article.category-help {
-    border-top: 5px solid $help-color;
+    border-top: 7px solid $help-color;
     .read-more {
       background: $help-color;
       &:hover {
@@ -27,7 +27,7 @@ $video-color: #725eee;
     }
   }
   article.category-image {
-    border-top: 5px solid $image-color;
+    border-top: 7px solid $image-color;
     .read-more {
       background: $image-color;
       &:hover {
@@ -36,7 +36,7 @@ $video-color: #725eee;
     }
   }
   article.category-forum {
-    border-top: 5px solid $forum-color;
+    border-top: 7px solid $forum-color;
     .read-more {
       background: $forum-color;
       &:hover {
@@ -45,7 +45,7 @@ $video-color: #725eee;
     }
   }
   article.category-quotes {
-    border-top: 5px solid $quotes-color;
+    border-top: 7px solid $quotes-color;
     .read-more {
       background: $quotes-color;
       &:hover {
@@ -54,7 +54,7 @@ $video-color: #725eee;
     }
   }
   article.category-news {
-    border-top: 5px solid $news-color;
+    border-top: 7px solid $news-color;
     .read-more {
       background: $news-color;
       &:hover {
@@ -63,7 +63,7 @@ $video-color: #725eee;
     }
   }
   article.category-slideshow {
-    border-top: 5px solid $slideshow-color;
+    border-top: 7px solid $slideshow-color;
     .read-more {
       background: $slideshow-color;
       &:hover {
@@ -72,7 +72,7 @@ $video-color: #725eee;
     }
   }
   article.category-video {
-    border-top: 5px solid $video-color;
+    border-top: 7px solid $video-color;
     .read-more {
       background: $video-color;
       &:hover {

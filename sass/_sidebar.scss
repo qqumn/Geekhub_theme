@@ -2,64 +2,66 @@ $Open_Sans: 'Open Sans', sans-serif;
 
 #secondary {
   .menu {
+    background: #323335;
     li {
+      text-align: center;
       a {
         display: block;
         padding: 10px;
-        color: #363636;
+        color: #fff;
         font-size: 15px;
         font-family: $Open_Sans;
         border-radius: 2px;
         letter-spacing: -1px;
         text-transform: uppercase;
+
         &:hover {
-          background: rgba(0, 0, 0, 0.05);
+          background: rgba(#222222, 0.55);
         }
       }
     }
   }
 }
-@media (max-width: 320px) {
-  #secondary {
-    .menu {
-      li {
-        text-align: center;
-        border-bottom: 1px solid #000;
 
-        &:first-child {
-          margin-top: 5px;
-        }
-        }
-      }
-    }
-  }
-@media (max-width: 480px) {
-  #secondary {
-    .menu {
-      li {
-        text-align: center;
-        border-bottom: 1px solid #000;
-
-        &:first-child {
-          margin-top: 5px;
-        }
-      }
-    }
-  }
+.fa-bars {
+  display: none !important;
 }
-@media (max-width: 768px) {
-  #secondary {
-    .menu {
-      li {
-        text-align: center;
-        border-bottom: 1px solid #000;
 
-        &:first-child {
-          margin-top: 5px;
-        }
-      }
+@media screen and (max-width: 768px) {
+  #site-navigation {
+    display: none;
+  }
+  .container-left {
+    width: 100%;
+  }
+  .social-media-icons {
+    display: none;
+  }
+  .fa-bars {
+    display: block !important;
+    margin: 0 auto !important;
+    font-size: 32px !important;
+    color: #fff !important;
+    text-align: center;
+  }
+  #secondary {
+    position: fixed;
+    top: 52px;
+    background: #323335;
+    padding: 15px 0;
+  }
+  #wpadminbar {
+    display: none;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .site-description, form {
+      display: none;
     }
   }
+
 }
 .sidebar-image {
   display: block;

@@ -1,5 +1,5 @@
 <?php
-/*Template Name: Gallery*/
+/*Template Name: Portfolio*/
 
 get_header(); ?>
     <div class="container-elastic">
@@ -7,63 +7,34 @@ get_header(); ?>
         get_sidebar();
         ?>
         <div id="primary" class="content-area">
-            <main id="main" class="site-main portfolio-page" role="main">
-                <div id="options">
-                    <?php
-                    if (function_exists('jss_tag_cloud')) {
-                        jss_tag_cloud($args = '');
-                    } else {
-                        echo 'Something has gone terribly wrong here!';
-                    }
-                    ?>
-                </div>
-                <ul class="portfolio photogal">
-                    <?php
-                    $wp_query = new WP_Query(
-                        array(
-                            'posts_per_page' => -1,
-                            'post_type' => 'portfolio_type'
-                        )
-                    );
+            <ul class="cats"><?php wp_list_categories(array(
+                    'taxonomy' => 'portfolio_cats',
+                    'hide_empty' => false,
+                    'title_li' => ''
+                )) ?></ul>
+            <?php $query = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => 18)); ?>
+            <?php if ($query->have_posts()) : ?>
+                <ul class="portfolio-showcase ">
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <li class="portfolio-pic">
+                            <?php if (has_post_thumbnail()) {
+                                the_post_thumbnail();
+                            } ?>
+                            <div class="rollover">
+                                <h3 class="item-title">
+                                    <?php the_title(); ?>
+                                </h3>
 
-                    //begine loop
-                    while ($wp_query->have_posts()) : $wp_query->the_post();
-                        ?>
-
-
-                        <li class="element portfolio-item <?php if (function_exists('jss_taxonomy_portfolio')) {
-                            jss_taxonomy_gallery();
-                        } ?>">
-                            <div class="portfolio-thumbnail">
-                                <a class="fancybox" rel="<?php if (function_exists('jss_taxonomy_name')) {
-                                    jss_taxonomy_gallery();
-                                } ?>"
-                                   href="
-                               <?php
-                                   $image_id = get_post_thumbnail_id();
-                                   $image_url = wp_get_attachment_image_src($image_id, '', true);
-                                   echo $image_url[0];
-                                   ?>">
-                                    <?php the_post_thumbnail(); ?>
-                                </a>
+                                <p><?php echo wp_trim_words(the_content(), 20) ?></p>
                             </div>
-                            <div class="portfolio-rollover">
-                                <a href="<?php the_permalink(); ?>" class="portfolio-link">
-                                    <h3 class="portfolio-item-title"><?php trim_title_chars(7, ' ...'); ?></h3>
-                                </a>
-                                <p class="portfolio-item-content"><?php echo wp_trim_words(get_the_content(), 2); ?></p>
-                                <p class="portfolio-item-category">
-                                    <?php if( function_exists('jss_taxonomy_portfolio')){ ?>
-                                        <a href="<?php the_permalink(); ?>"><?php jss_taxonomy_portfolio('', ' / ', ''); ?></a>
-                                    <?php }?>
-                                </p>
-                        </li><!--end li-->
-
-                    <?php endwhile; // end of the loop. ?>
-
-        </div><!--end content-->
-        </main><!-- #main -->
-    </div><!-- #primary -->
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php else :
+                get_template_part('template-parts/content', 'none');
+            endif; ?>
+            <?php wp_reset_query(); ?>
+        </div><!-- #primary -->
 
     </div>
 <?php

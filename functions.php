@@ -114,8 +114,6 @@ function ghtmeme_scripts()
     wp_enqueue_style('ghtmeme-portfolio-styles', get_template_directory_uri() . '/stylesheets/portfolio-styles.css');
     wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
     wp_enqueue_style('flexslider', get_template_directory_uri() . '/stylesheets/flexslider.css');
-    wp_enqueue_style('menu', get_template_directory_uri() . '/stylesheets/menu.css');
-    wp_enqueue_script('ghtmeme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
     wp_enqueue_script('ghtmeme-jquery', get_template_directory_uri() . '/js/jquery-1.4.3.min.js', array(), '20151215', true);
     wp_enqueue_script('ghtmeme-fancybox', get_template_directory_uri() . '/js/jquery.fancybox-1.3.4.js', array(), '20151215', true);
     wp_enqueue_script('ghtmeme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
@@ -137,6 +135,7 @@ function ghtmeme_scripts()
     wp_enqueue_script('ghtmeme-lightbox', get_template_directory_uri() . '/js/lightbox.js', array(), '20151215', true);
     wp_enqueue_script('scriptform', get_template_directory_uri() . '/js/scriptform.js', array(), '20151215', true);
     //general
+    wp_register_script('main', get_template_directory_uri() . '/js/main.js', array(), false, true);
     wp_register_script('general', get_template_directory_uri() . '/js/general.js', array(), false, true);
     wp_register_script('jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array(), false, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -227,6 +226,85 @@ function ghdev_features()
     ));
 }
 
+// Gallery post type registrarion
+add_action('init', 'ghdev_gallery');
+function ghdev_gallery()
+{
+    register_post_type('gallery', array(
+        'public' => true,
+        'supports' => array(
+            'title',
+            'thumbnail',
+            'editor',
+            'custom-fields'
+        ),
+
+        'labels' => array(
+            'name' => __('Gallery', 'ghdev'),
+            'add_new' => __('Add picture', 'ghdev'),
+            'all_items' => __('All pictures', 'ghdev')
+        )
+    ));
+}
+
+add_action('init', 'gallery_taxonomies', 0);
+function gallery_taxonomies()
+{
+    register_taxonomy(
+        'gallery_cats',
+        'gallery',
+        array(
+            'labels' => array(
+                'name' => 'Gallery categories',
+                'add_new_item' => 'Add New Category',
+                'new_item_name' => "New Category"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true
+        )
+    );
+}
+
+// Portfolio post type registrarion
+add_action('init', 'ghdev_portfolio');
+function ghdev_portfolio()
+{
+    register_post_type('portfolio', array(
+        'public' => true,
+        'supports' => array(
+            'title',
+            'thumbnail',
+            'editor',
+            'custom-fields'
+        ),
+
+        'labels' => array(
+            'name' => __('Portfolio', 'ghdev'),
+            'add_new' => __('Add picture', 'ghdev'),
+            'all_items' => __('All pictures', 'ghdev')
+        )
+    ));
+}
+
+add_action('init', 'portfolio_taxonomies', 0);
+function portfolio_taxonomies()
+{
+    register_taxonomy(
+        'portfolio_cats',
+        'portfolio',
+        array(
+            'labels' => array(
+                'name' => 'Portfolio categories',
+                'add_new_item' => 'Add New Category',
+                'new_item_name' => "New Category"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true
+        )
+    );
+}
 //----------------------------------------------
 //--------------add theme support for thumbnails
 //----------------------------------------------
@@ -239,104 +317,6 @@ add_image_size( 'album-grid', 450, 450, true );
 //----------------------------------------------
 //----------register and label portfolio post type
 //----------------------------------------------
-$portfolio_labels = array(
-    'name' => _x('Portfolio', 'post type general name'),
-    'singular_name' => _x('Portfolio', 'post type singular name'),
-    'add_new' => _x('Add New', 'portfolio'),
-    'add_new_item' => __("Add New Portfolio"),
-    'edit_item' => __("Edit Portfolio"),
-    'new_item' => __("New Portfolio"),
-    'view_item' => __("View Portfolio"),
-    'search_items' => __("Search Portfolio"),
-    'not_found' =>  __('No galleries found'),
-    'not_found_in_trash' => __('No galleries found in Trash'),
-    'parent_item_colon' => ''
-
-);
-$portfolio_args = array(
-    'labels' => $portfolio_labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true,
-    'query_var' => true,
-    'rewrite' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'capability_type' => 'post',
-    'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'tags'),
-    'menu_icon' => get_bloginfo('template_directory') . '/images/photo-album.png' //16x16 png if you want an icon
-);
-register_post_type('portfolio', $portfolio_args);
-
-
-//----------------------------------------------
-//------------------------create custom taxonomy
-//----------------------------------------------
-add_action( 'init', 'jss_create_portfolio_taxonomies', 0);
-
-function jss_create_portfolio_taxonomies(){
-    register_taxonomy(
-        'phototype', 'portfolio',
-        array(
-            'hierarchical'=> true,
-            'label' => 'Photo Types',
-            'singular_label' => 'Photo Type',
-            'rewrite' => true
-        )
-    );
-}
-
-//----------------------------------------------
-//--------------------------admin custom columns
-//----------------------------------------------
-//admin_init
-add_action('manage_posts_custom_column', 'jss_custom_columns');
-add_filter('manage_edit-portfolio_columns', 'jss_add_new_portfolio_columns');
-
-function jss_add_new_portfolio_columns( $columns ){
-    $columns = array(
-        'cb'				=>		'<input type="checkbox">',
-        'jss_post_thumb'	=>		'Thumbnail',
-        'title'				=>		'Photo Title',
-        'phototype'			=>		'Photo Type',
-        'author'			=>		'Author',
-        'date'				=>		'Date'
-
-    );
-    return $columns;
-}
-
-function jss_custom_columns( $column ){
-    global $post;
-
-    switch ($column) {
-        case 'jss_post_thumb' : echo the_post_thumbnail('admin-list-thumb'); break;
-        case 'description' : the_excerpt(); break;
-        case 'phototype' : echo get_the_term_list( $post->ID, 'phototype', '', ', ',''); break;
-    }
-}
-
-//add thumbnail images to column
-add_filter('manage_posts_columns', 'jss_add_post_thumbnail_column', 5);
-add_filter('manage_pages_columns', 'jss_add_post_thumbnail_column', 5);
-add_filter('manage_custom_post_columns', 'jss_add_post_thumbnail_column', 5);
-
-// Add the column
-function jss_add_post_thumbnail_column($cols){
-    $cols['jss_post_thumb'] = __('Thumbnail');
-    return $cols;
-}
-
-function jss_display_post_thumbnail_column($col, $id){
-    switch($col){
-        case 'jss_post_thumb':
-            if( function_exists('the_post_thumbnail') )
-                echo the_post_thumbnail( 'admin-list-thumb' );
-            else
-                echo 'Not supported in this theme';
-            break;
-    }
-}
 
 ////////////////////////////////
 ////////// NEW CODE BELOW //////
@@ -376,522 +356,8 @@ function jss_load_scripts(){
 add_action( 'wp_enqueue_scripts', 'jss_load_scripts' );
 
 
-//----------------------------------------------
-//-------------------custom tag cloud generation
-//----------------------------------------------
 
-function jss_generate_tag_cloud( $tags, $args = '' ) {
-    global $wp_rewrite;
 
-    //don't touch these defaults or the sky will fall
-    $defaults = array(
-        'smallest' => 8, 'largest' => 22, 'unit' => 'pt', 'number' => 0,
-        'format' => 'flat', 'separator' => "\n", 'orderby' => 'name', 'order' => 'ASC',
-        'topic_count_text_callback' => 'default_topic_count_text',
-        'topic_count_scale_callback' => 'default_topic_count_scale', 'filter' => 1
-    );
-
-    //determine if the variable is null
-    if ( !isset( $args['topic_count_text_callback'] ) && isset( $args['single_text'] ) && isset( $args['multiple_text'] ) ) {
-        //var_export
-        $body = 'return sprintf (
-	    	_n(' . var_export($args['single_text'], true) . ', ' . var_export($args['multiple_text'], true) . ', $count), number_format_i18n( $count ));';
-        //create_function
-        $args['topic_count_text_callback'] = create_function('$count', $body);
-    }
-
-    //parse arguments from above
-    $args = wp_parse_args( $args, $defaults );
-
-    //extract the variables
-    extract( $args );
-
-    //check to see if they are empty and stop
-    if ( empty( $tags ) )
-        return;
-
-    //apply the sort filter
-    $tags_sorted = apply_filters( 'tag_cloud_sort', $tags, $args );
-
-    //check to see if the tags have been pre-sorted
-    if ( $tags_sorted != $tags  ) { // the tags have been sorted by a plugin
-        $tags = $tags_sorted;
-        unset($tags_sorted);
-    } else {
-        if ( 'RAND' == $order ) {
-            shuffle($tags);
-        } else {
-            // SQL cannot save you
-            if ( 'name' == $orderby )
-                uasort( $tags, create_function('$a, $b', 'return strnatcasecmp($a->name, $b->name);') );
-            else
-                uasort( $tags, create_function('$a, $b', 'return ($a->count > $b->count);') );
-
-            if ( 'DESC' == $order )
-                $tags = array_reverse( $tags, true );
-        }
-    }
-    //check number and slice array
-    if ( $number > 0 )
-        $tags = array_slice($tags, 0, $number);
-
-    //set array
-    $counts = array();
-
-    //set array for alt tag
-    $real_counts = array();
-
-    foreach ( (array) $tags as $key => $tag ) {
-        $real_counts[ $key ] = $tag->count;
-        $counts[ $key ] = $topic_count_scale_callback($tag->count);
-    }
-
-    //determine min coutn
-    $min_count = min( $counts );
-
-    //default wordpress sizing
-    $spread = max( $counts ) - $min_count;
-    if ( $spread <= 0 )
-        $spread = 1;
-    $font_spread = $largest - $smallest;
-    if ( $font_spread < 0 )
-        $font_spread = 1;
-    $font_step = $font_spread / $spread;
-
-    $a = array();
-
-    //iterate thought the array
-    foreach ( $tags as $key => $tag ) {
-        $count = $counts[ $key ];
-        $real_count = $real_counts[ $key ];
-        $tag_link = '#' != $tag->link ? esc_url( $tag->link ) : '#';
-        $tag_id = isset($tags[ $key ]->id) ? $tags[ $key ]->id : $key;
-        $tag_name = $tags[ $key ]->name;
-
-        //If you want to do some custom stuff, do it here like we did
-        //call_user_func
-        $a[] = "<a href='#filter' class='tag-link-$tag_id'
-		data-option-value='.$tag_name'
-		title='" . esc_attr( call_user_func( $topic_count_text_callback, $real_count ) ) . "'>$tag_name</a>"; //background-color is added for validation purposes.
-    }
-
-    //set new format
-    switch ( $format ) :
-        case 'array' :
-            $return =& $a;
-            break;
-        case 'list' :
-            //create our own setup of how it will display and add all
-            $return = "<ul id='filters' class='option-set' data-option-key='filter'>\n\t
-		<li><a href='filter' data-option-value='*' class='selected'>All</a></li>
-		<li>";
-            //join
-            $return .= join( "</li>\n\t<li>", $a );
-            $return .= "</li>\n</ul>\n";
-            break;
-        default :
-            //return
-            $return = join( $separator, $a );
-            break;
-    endswitch;
-    //create new filter hook so we can do this
-    return apply_filters( 'jss_generate_tag_cloud', $return, $tags, $args );
-}
-
-//----------------------------------------------
-//---------------------custom tag cloud function
-//----------------------------------------------
-
-//the function below is very similar to 'wp_tag_cloud()' currently located in: 'wp-includes/category-template.php'
-function jss_tag_cloud( $args = '' ) {
-    //set some default
-    $defaults = array(
-        'format' => 'list', //display as list
-        'taxonomy' => 'phototype', //our custom post type taxonomy
-        'hide_empty' => 'true',
-        'echo' => true, //touch this and it all blows up
-        'link' => 'view'
-    );
-
-    //use wp_parse to merge the argus and default values
-    $args = wp_parse_args( $args, $defaults );
-
-    //go fetch the terms of our custom taxonomy. query by descending and order by most posts
-    $tags = get_terms( $args['taxonomy'], array_merge( $args, array( 'orderby' => 'count', 'order' => 'DESC' ) ) );
-
-    //if there are no tags then end function
-    if ( empty( $tags ))
-        return;
-
-    //set the minimum number of posts the tag must have to display (change to whatever)
-    $min_num = 1;
-
-    //logic to display tag or not based on post count
-    foreach($tags as $key => $tag)
-    {
-        //if the post container lest than the min_num variable set above
-        if($tag->count < $min_num)
-        {
-            //unset it and destroy part of the array
-            unset($tags[$key]);
-        }
-    }
-
-    foreach ( $tags as $key => $tag ) {
-        if ( 'edit' == $args['link'] )
-
-            //display the link to edit the tag, if the user is logged in and has rights
-            $link = get_edit_tag_link( $tag -> term_id, $args['taxonomy'] );
-        else
-            //get the permalink for the taxonomy
-            $link = get_term_link( intval($tag -> term_id), $args['taxonomy'] );
-
-        //check if there is an error
-        if ( is_wp_error( $link ) )
-            return false;
-
-        $tags[ $key ] -> link = $link;
-        $tags[ $key ] -> id = $tag -> term_id;
-    }
-    //generate our tag cloud
-    $return = jss_generate_tag_cloud( $tags, $args ); // here is where whe list what we are sorting
-
-    //create a new filter hook
-    $return = apply_filters( 'jss_tag_cloud', $return, $args );
-
-    if ( 'array' == $args['format'] || empty($args['echo']) )
-        return $return;
-
-    echo $return;
-}
-//Hooks a function to a specific filter action.
-//hook function to filter
-add_filter('wp_tag_cloud', 'jss_tag_cloud');
-
-//----------------------------------------------
-//-------------------------get CPT taxonomy name
-//----------------------------------------------
-function jss_taxonomy_portfolio(){
-    global $post;
-
-    //get terms for CPT
-    $terms = get_the_terms( $post->ID , 'phototype' );
-    //iterate through array
-    foreach ( $terms as $termphoto ) {
-        //echo taxonomy name as class
-        echo ' '.$termphoto->name;
-    }
-}
-
-/*--------------*/
-/*GALLERY*/
-//----------------------------------------------
-//----------register and label gallery post type
-//----------------------------------------------
-$gallery_labels = array(
-    'name' => _x('Gallery', 'post type general name'),
-    'singular_name' => _x('Gallery', 'post type singular name'),
-    'add_new' => _x('Add New', 'gallery'),
-    'add_new_item' => __("Add New Gallery"),
-    'edit_item' => __("Edit Gallery"),
-    'new_item' => __("New Gallery"),
-    'view_item' => __("View Gallery"),
-    'search_items' => __("Search Gallery"),
-    'not_found' =>  __('No galleries found'),
-    'not_found_in_trash' => __('No galleries found in Trash'),
-    'parent_item_colon' => ''
-
-);
-$gallery_args = array(
-    'labels' => $gallery_type_labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true,
-    'query_var' => true,
-    'rewrite' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'capability_type' => 'post',
-    'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'tags'),
-    'menu_icon' => get_bloginfo('template_directory') . '/images/photo-album.png' //16x16 png if you want an icon
-);
-register_post_type('gallery', $gallery_type_args);
-
-
-//----------------------------------------------
-//------------------------create custom taxonomy
-//----------------------------------------------
-add_action( 'init', 'jss_create_gallery_type_taxonomies', 0);
-
-function jss_create_gallery_type_taxonomies(){
-    register_taxonomy(
-        'gallerytype', 'gallery',
-        array(
-            'hierarchical'=> true,
-            'label' => 'Photo Types',
-            'singular_label' => 'Photo Type',
-            'rewrite' => true
-        )
-    );
-}
-
-//----------------------------------------------
-//--------------------------admin custom columns
-//----------------------------------------------
-//admin_init
-add_action('manage_gallery_posts_custom_column', 'jss_custom_gallery_columns');
-add_filter('manage_edit-gallery_type_columns', 'add_new_gallery_type_columns');
-
-function jss_add_new_gallery_type_columns( $columns ){
-    $columns = array(
-        'cb'				=>		'<input type="checkbox">',
-        'post_thumb'	=>		'Thumbnail',
-        'title'				=>		'Gallery Photo Title',
-        'gallerytype'			=>		'Gallery Photo Type',
-        'author'			=>		'Author',
-        'date'				=>		'Date'
-
-    );
-    return $columns;
-}
-
-function jss_custom_gallery_columns( $column ){
-    global $post;
-
-    switch ($column) {
-        case 'post_thumb' : echo the_post_thumbnail('admin-list-thumb'); break;
-        case 'description' : the_excerpt(); break;
-        case 'gallerytype' : echo get_the_term_list( $post->ID, 'gallerytype', '', ', ',''); break;
-    }
-}
-
-//add thumbnail images to column
-add_filter('manage_gallery_posts_columns', 'jss_add_post_thumbnail_gallery_column', 5);
-add_filter('manage_gallery_pages_columns', 'jss_add_post_thumbnail_gallery_column', 5);
-add_filter('manage_gallery_custom_post_columns', 'jss_add_post_thumbnail_gallery_column', 5);
-
-// Add the column
-function jss_add_post_thumbnail_gallery_column($cols){
-    $cols['post_thumb'] = __('Thumbnail');
-    return $cols;
-}
-
-function jss_display_galery_post_thumbnail_column($col, $id){
-    switch($col){
-        case 'post_thumb':
-            if( function_exists('the_post_thumbnail') )
-                echo the_post_thumbnail( 'admin-list-thumb' );
-            else
-                echo 'Not supported in this theme';
-            break;
-    }
-}
-//----------------------------------------------
-//-------------------custom tag cloud generation
-//----------------------------------------------
-
-function jss_generate_gallery_tag_cloud( $tags, $args = '' ) {
-    global $wp_rewrite;
-
-    //don't touch these defaults or the sky will fall
-    $defaults = array(
-        'smallest' => 8, 'largest' => 22, 'unit' => 'pt', 'number' => 0,
-        'format' => 'flat', 'separator' => "\n", 'orderby' => 'name', 'order' => 'ASC',
-        'topic_count_text_callback' => 'default_topic_count_text',
-        'topic_count_scale_callback' => 'default_topic_count_scale', 'filter' => 1
-    );
-
-    //determine if the variable is null
-    if ( !isset( $args['topic_count_text_callback'] ) && isset( $args['single_text'] ) && isset( $args['multiple_text'] ) ) {
-        //var_export
-        $body = 'return sprintf (
-	    	_n(' . var_export($args['single_text'], true) . ', ' . var_export($args['multiple_text'], true) . ', $count), number_format_i18n( $count ));';
-        //create_function
-        $args['topic_count_text_callback'] = create_function('$count', $body);
-    }
-
-    //parse arguments from above
-    $args = wp_parse_args( $args, $defaults );
-
-    //extract the variables
-    extract( $args );
-
-    //check to see if they are empty and stop
-    if ( empty( $tags ) )
-        return;
-
-    //apply the sort filter
-    $tags_sorted = apply_filters( 'tag_cloud_sort', $tags, $args );
-
-    //check to see if the tags have been pre-sorted
-    if ( $tags_gallery_sorted != $tags  ) { // the tags have been sorted by a plugin
-        $tags = $tags_gallery_sorted;
-        unset($tags_gallery_sorted);
-    } else {
-        if ( 'RAND' == $order ) {
-            shuffle($tags);
-        } else {
-            // SQL cannot save you
-            if ( 'name' == $orderby )
-                uasort( $tags, create_function('$k, $n', 'return strnatcasecmp($a->name, $b->name);') );
-            else
-                uasort( $tags, create_function('$k, $n', 'return ($a->count > $b->count);') );
-
-            if ( 'DESC' == $order )
-                $tags = array_reverse( $tags, true );
-        }
-    }
-    //check number and slice array
-    if ( $number > 0 )
-        $tags = array_slice($tags, 0, $number);
-
-    //set array
-    $counts = array();
-
-    //set array for alt tag
-    $real_counts = array();
-
-    foreach ( (array) $tags as $key => $tag ) {
-        $real_counts[ $key ] = $tag->count;
-        $counts[ $key ] = $topic_count_scale_callback($tag->count);
-    }
-
-    //determine min coutn
-    $min_count = min( $counts );
-
-    //default wordpress sizing
-    $spread = max( $counts ) - $min_count;
-    if ( $spread <= 0 )
-        $spread = 1;
-    $font_spread = $largest - $smallest;
-    if ( $font_spread < 0 )
-        $font_spread = 1;
-    $font_step = $font_spread / $spread;
-
-    $a = array();
-
-    //iterate thought the array
-    foreach ( $tags as $key => $tag ) {
-        $count = $counts[ $key ];
-        $real_count = $real_counts[ $key ];
-        $tag_link = '#' != $tag->link ? esc_url( $tag->link ) : '#';
-        $tag_id = isset($tags[ $key ]->id) ? $tags[ $key ]->id : $key;
-        $tag_name = $tags[ $key ]->name;
-
-        //If you want to do some custom stuff, do it here like we did
-        //call_user_func
-        $a[] = "<a href='#filter' class='tag-link-$tag_id'
-		data-option-value='.$tag_name'
-		title='" . esc_attr( call_user_func( $topic_count_text_callback, $real_count ) ) . "'>$tag_name</a>"; //background-color is added for validation purposes.
-    }
-
-    //set new format
-    switch ( $format ) :
-        case 'array' :
-            $return =& $k;
-            break;
-        case 'list' :
-            //create our own setup of how it will display and add all
-            $return = "<ul id='filters' class='option-set' data-option-key='filter'>\n\t
-		<li><a href='filter' data-option-value='*' class='selected'>All</a></li>
-		<li>";
-            //join
-            $return .= join( "</li>\n\t<li>", $k );
-            $return .= "</li>\n</ul>\n";
-            break;
-        default :
-            //return
-            $return = join( $separator, $k );
-            break;
-    endswitch;
-    //create new filter hook so we can do this
-    return apply_filters( 'jss_generate_gallery_tag_cloud', $return, $tags, $args );
-}
-
-//----------------------------------------------
-//---------------------custom tag cloud function
-//----------------------------------------------
-
-//the function below is very similar to 'wp_tag_cloud()' currently located in: 'wp-includes/category-template.php'
-function jss_gallery_tag_cloud( $args = '' ) {
-    //set some default
-    $defaults = array(
-        'format' => 'list', //display as list
-        'taxonomy' => 'gallerytype', //our custom post type taxonomy
-        'hide_empty' => 'true',
-        'echo' => true, //touch this and it all blows up
-        'link' => 'view'
-    );
-
-    //use wp_parse to merge the argus and default values
-    $args = wp_parse_args( $args, $defaults );
-
-    //go fetch the terms of our custom taxonomy. query by descending and order by most posts
-    $tags = get_terms( $args['taxonomy'], array_merge( $args, array( 'orderby' => 'count', 'order' => 'DESC' ) ) );
-
-    //if there are no tags then end function
-    if ( empty( $tags ))
-        return;
-
-    //set the minimum number of posts the tag must have to display (change to whatever)
-    $min_num = 1;
-
-    //logic to display tag or not based on post count
-    foreach($tags as $key => $tag)
-    {
-        //if the post container lest than the min_num variable set above
-        if($tag->count < $min_num)
-        {
-            //unset it and destroy part of the array
-            unset($tags[$key]);
-        }
-    }
-
-    foreach ( $tags as $key => $tag ) {
-        if ( 'edit' == $args['link'] )
-
-            //display the link to edit the tag, if the user is logged in and has rights
-            $link = get_edit_tag_link( $tag -> term_id, $args['taxonomy'] );
-        else
-            //get the permalink for the taxonomy
-            $link = get_term_link( intval($tag -> term_id), $args['taxonomy'] );
-
-        //check if there is an error
-        if ( is_wp_error( $link ) )
-            return false;
-
-        $tags[ $key ] -> link = $link;
-        $tags[ $key ] -> id = $tag -> term_id;
-    }
-    //generate our tag cloud
-    $return = jss_generate_gallery_tag_cloud( $tags, $args ); // here is where whe list what we are sorting
-
-    //create a new filter hook
-    $return = apply_filters( 'tag_cloud', $return, $args );
-
-    if ( 'array' == $args['format'] || empty($args['echo']) )
-        return $return;
-
-    echo $return;
-}
-//Hooks a function to a specific filter action.
-//hook function to filter
-add_filter('wp_tag_cloud', 'tag_cloud');
-
-//----------------------------------------------
-//-------------------------get CPT taxonomy name
-//----------------------------------------------
-function jss_taxonomy_gallery(){
-    global $post;
-
-    //get terms for CPT
-    $terms = get_the_terms( $post->ID , 'gallerytype' );
-    //iterate through array
-    foreach ( $terms as $termgalleryphoto ) {
-        //echo taxonomy name as class
-        echo ' '.$termgalleryphoto->name;
-    }
-}
 /*---------------------------------*/
 /*------Feedback form------*/
 /*---------------------------------*/

@@ -1,24 +1,30 @@
+
 .contact-info {
+  li {
+    max-width: 200px;
+    margin: 0 auto;
+  }
   float: left;
-  background: #fff;
   padding: 20px;
-  border-top: 5px solid #8ad903;
+  background: #363636;
+  border-right: 3px solid lighten(#363636, 80%);
   font-size: 16px;
   font-weight: 300;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
   a {
-    color: darken(#545454, 20%);
+    color: #fff;
   }
   .fa {
-    color: #8ad903;
+    color: #fff;
   }
 }
+
 .contact {
   float: right;
-  background: #fff;
+  background: #363636;
   padding: 20px;
   width: 300px;
-  border-top: 5px solid #c847ff;
+  border-left: 3px solid lighten(#363636, 80%);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
   box-sizing: border-box;
   #response {
@@ -38,21 +44,22 @@
       border: none;
       padding: 10px;
       font-size: 14px;
-      color: #545454;
+      color: #fff;
       border-radius: 2px;
       background: rgba(#ddd, 0.12);
     }
+
     button[type='submit'] {
       display: inline-block;
       padding: 5px 10px;
       font-size: 20px;
-      background: #c847ff;
+      background: lighten(#363636, 40%);
       border-radius: 2px;
       border: none;
       color: white;
       cursor: pointer;
       &:hover {
-        background: darken(#c847ff, 10%);
+        background: lighten(#363636, 15%);
       }
     }
     textarea {
@@ -60,16 +67,27 @@
       height: 120px;
     }
     ::-webkit-input-placeholder {
-      color: #545454 !important;
+      color: #fff !important;
     }
     ::-moz-placeholder {
-      color: #545454 !important;
+      color: #fff !important;
     }
     :-moz-placeholder {
-      color: #545454 !important;
+      color: #fff !important;
     }
     :-ms-input-placeholder {
-      color: #545454 !important;
+      color: #fff !important;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info, .contact {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 3px solid lighten(#363636, 80%);
+  }
+  iframe {
+    display: none;
   }
 }
