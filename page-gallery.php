@@ -18,7 +18,7 @@ get_header(); ?>
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
                         <li class="gallery-pic">
                             <a href="<?php the_permalink() ?>" class="fancybox">
-                                <?php if (has_post_thumbnail(array(240, 240))) {
+                                <?php if (has_post_thumbnail()) {
                                     the_post_thumbnail();
                                 } ?>
                                 <div class="rollover">
