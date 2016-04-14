@@ -12,7 +12,7 @@ $Open_Sans: 'Open Sans', sans-serif;
 
 .site-branding {
   float: left;
-  width: 200px;
+  max-width: 70%;
   padding-right: 20px;
   .site-title a {
     line-height: 1.1;
@@ -37,7 +37,7 @@ $Open_Sans: 'Open Sans', sans-serif;
 .search-form {
   float: left;
   min-width: 20%;
-  max-width: 50%;
+  max-width: 30%;
   .screen-reader-text, .search-submit {
     display: none;
   }
@@ -73,7 +73,7 @@ div.container-left {
 
 .social-media-icons {
   float: right;
-  max-width: 40%;
+  max-width: 30%;
   overflow: hidden;
   li {
     display: inline-block;
