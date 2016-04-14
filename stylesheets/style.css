@@ -69,7 +69,6 @@ caption, th, td {
 q, blockquote {
   quotes: none;
 }
-
 /* line 103, ../../../../../../../../lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
@@ -226,17 +225,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: relative;
   z-index: 999;
 }
-
 /* line 6, ../sass/_sidebar.scss */
 #secondary .menu {
   background: #323335;
 }
-
 /* line 8, ../sass/_sidebar.scss */
 #secondary .menu li {
   text-align: center;
 }
-
 /* line 10, ../sass/_sidebar.scss */
 #secondary .menu li a {
   display: block;
@@ -248,7 +244,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   letter-spacing: -1px;
   text-transform: uppercase;
 }
-
 /* line 20, ../sass/_sidebar.scss */
 #secondary .menu li a:hover {
   background: rgba(34, 34, 34, 0.55);
@@ -303,13 +298,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     top: 0;
     width: 100%;
   }
-
   /* line 62, ../sass/_sidebar.scss */
   .site-header .site-description, .site-header form {
     display: none;
   }
 }
-
 /* line 68, ../sass/_sidebar.scss */
 .sidebar-image {
   display: block;
@@ -337,7 +330,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 200px;
   padding-right: 20px;
 }
-
 /* line 17, ../sass/_header.scss */
 .site-branding .site-title a {
   line-height: 1.1;
@@ -351,7 +343,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: 600;
   color: white;
 }
-
 /* line 29, ../sass/_header.scss */
 .site-branding .site-description {
   white-space: nowrap;
@@ -367,12 +358,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /* Firefox 19+ */
   /* Firefox 18- */
 }
-
 /* line 41, ../sass/_header.scss */
 .search-form .screen-reader-text, .search-form .search-submit {
   display: none;
 }
-
 /* line 44, ../sass/_header.scss */
 .search-form .search-field {
   width: 100%;
@@ -383,22 +372,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.12);
 }
-
 /* line 53, ../sass/_header.scss */
 .search-form ::-webkit-input-placeholder {
   color: white;
 }
-
 /* line 56, ../sass/_header.scss */
 .search-form ::-moz-placeholder {
   color: white;
 }
-
 /* line 60, ../sass/_header.scss */
 .search-form :-moz-placeholder {
   color: white;
 }
-
 /* line 64, ../sass/_header.scss */
 .search-form :-ms-input-placeholder {
   color: white;
@@ -416,52 +401,42 @@ div.container-left {
   max-width: 40%;
   overflow: hidden;
 }
-
 /* line 78, ../sass/_header.scss */
 .social-media-icons li {
   display: inline-block;
 }
-
 /* line 82, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(1) a:hover .fa {
   color: #00e0b6 !important;
 }
-
 /* line 89, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(2) a:hover .fa {
   color: #8ad903 !important;
 }
-
 /* line 96, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(3) a:hover .fa {
   color: #c847ff !important;
 }
-
 /* line 103, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(4) a:hover .fa {
   color: #ffb500 !important;
 }
-
 /* line 110, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(5) a:hover .fa {
   color: #ff2eb4 !important;
 }
-
 /* line 117, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(6) a:hover .fa {
   color: #ff5b4d !important;
 }
-
 /* line 124, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(7) a:hover .fa {
   color: #0091e6 !important;
 }
-
 /* line 131, ../sass/_header.scss */
 .social-media-icons li:nth-of-type(8) a:hover .fa {
   color: #725eee !important;
 }
-
 /* line 136, ../sass/_header.scss */
 .social-media-icons li a {
   margin: 5px;
@@ -661,12 +636,10 @@ div.container-left {
   max-width: 200px;
   margin: 0 auto;
 }
-
 /* line 16, ../sass/_contact.scss */
 .contact-info a {
   color: #fff;
 }
-
 /* line 19, ../sass/_contact.scss */
 .contact-info .fa {
   color: #fff;
@@ -684,7 +657,6 @@ div.container-left {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
   box-sizing: border-box;
 }
-
 /* line 34, ../sass/_contact.scss */
 .contact #response {
   margin: 20px 0 10px;
@@ -692,12 +664,10 @@ div.container-left {
   font-size: 22px;
   color: #c847ff;
 }
-
 /* line 41, ../sass/_contact.scss */
 .contact .contact-form h2 {
   font-size: 18px;
 }
-
 /* line 44, ../sass/_contact.scss */
 .contact .contact-form input, .contact .contact-form textarea {
   box-sizing: border-box;
@@ -710,7 +680,6 @@ div.container-left {
   border-radius: 2px;
   background: rgba(221, 221, 221, 0.12);
 }
-
 /* line 56, ../sass/_contact.scss */
 .contact .contact-form button[type='submit'] {
   display: inline-block;
@@ -722,33 +691,27 @@ div.container-left {
   color: white;
   cursor: pointer;
 }
-
 /* line 65, ../sass/_contact.scss */
 .contact .contact-form button[type='submit']:hover {
   background: #5c5c5c;
 }
-
 /* line 69, ../sass/_contact.scss */
 .contact .contact-form textarea {
   resize: none;
   height: 120px;
 }
-
 /* line 73, ../sass/_contact.scss */
 .contact .contact-form ::-webkit-input-placeholder {
   color: #fff !important;
 }
-
 /* line 76, ../sass/_contact.scss */
 .contact .contact-form ::-moz-placeholder {
   color: #fff !important;
 }
-
 /* line 79, ../sass/_contact.scss */
 .contact .contact-form :-moz-placeholder {
   color: #fff !important;
 }
-
 /* line 82, ../sass/_contact.scss */
 .contact .contact-form :-ms-input-placeholder {
   color: #fff !important;
@@ -809,7 +772,6 @@ div.container-left {
     margin: 0;
   }
 }
-
 @media (min-width: 480px) {
   /* line 50, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
@@ -821,7 +783,6 @@ div.container-left {
     padding: 15px;
   }
 }
-
 @media (min-width: 768px) {
   /* line 65, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
@@ -831,14 +792,12 @@ div.container-left {
     height: 150px;
   }
 }
-
 @media (min-width: 1024px) {
   /* line 78, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
     height: 170px;
   }
 }
-
 @media (min-width: 1200px) {
   /* line 88, ../sass/_slideshow.scss */
   .slideshow .slideshow-item .slideshow-rollover {
@@ -978,10 +937,12 @@ img.fancybox-image {
   width: 100%;
   float: left;
   margin: 0 auto;
+  margin-left: -10px;
   padding: 30px 20px;
   box-sizing: border-box;
 }
-/* line 7, ../sass/_portfolio.scss */
+
+/* line 8, ../sass/_portfolio.scss */
 .portfolio-showcase li {
   display: inline-block;
   width: 30%;
@@ -990,20 +951,23 @@ img.fancybox-image {
   position: relative;
   -webkit-filter: grayscale(100%);
 }
-/* line 13, ../sass/_portfolio.scss */
+
+/* line 14, ../sass/_portfolio.scss */
 .portfolio-showcase li:hover {
   transform: scale(1.2);
   transition: transform .4s ease;
   z-index: 999;
 }
-/* line 19, ../sass/_portfolio.scss */
+
+/* line 20, ../sass/_portfolio.scss */
 .portfolio-showcase li img {
   overflow: hidden;
   width: 100% !important;
   max-height: 240px !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-/* line 25, ../sass/_portfolio.scss */
+
+/* line 26, ../sass/_portfolio.scss */
 .portfolio-showcase li .rollover {
   position: absolute;
   bottom: 20px;
@@ -1016,51 +980,57 @@ img.fancybox-image {
   font-size: 16px;
   color: #fff;
 }
-/* line 38, ../sass/_portfolio.scss */
+
+/* line 39, ../sass/_portfolio.scss */
 .portfolio-showcase li:hover .rollover {
   opacity: 1;
   transition: transform .5s ease;
   transform: translatex(10px);
 }
 @media screen and (max-width: 768px) {
-  /* line 7, ../sass/_portfolio.scss */
+  /* line 8, ../sass/_portfolio.scss */
   .portfolio-showcase li {
     width: 50%;
     height: 360px;
   }
-  /* line 47, ../sass/_portfolio.scss */
+
+  /* line 48, ../sass/_portfolio.scss */
   .portfolio-showcase li img {
     max-height: 360px !important;
   }
 }
 @media screen and (max-width: 360px) {
-  /* line 7, ../sass/_portfolio.scss */
+  /* line 8, ../sass/_portfolio.scss */
   .portfolio-showcase li {
     width: 100%;
     height: 480px;
   }
-  /* line 54, ../sass/_portfolio.scss */
+
+  /* line 55, ../sass/_portfolio.scss */
   .portfolio-showcase li img {
     max-height: 480px !important;
   }
-  /* line 57, ../sass/_portfolio.scss */
+
+  /* line 58, ../sass/_portfolio.scss */
   .portfolio-showcase li .rollover {
     left: 20;
   }
 }
-/* line 62, ../sass/_portfolio.scss */
+
+/* line 63, ../sass/_portfolio.scss */
 .portfolio-showcase:hover {
   -webkit-filter: grayscale(0%);
 }
 
-/* line 68, ../sass/_portfolio.scss */
+/* line 69, ../sass/_portfolio.scss */
 div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened {
   position: relative;
   transform: scale(0.8);
   transition: transform 2s ease;
   z-index: 101;
 }
-/* line 73, ../sass/_portfolio.scss */
+
+/* line 74, ../sass/_portfolio.scss */
 div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened:after {
   content: "";
   display: block;
@@ -1073,32 +1043,33 @@ div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened:after {
   z-index: -10;
 }
 
-/* line 86, ../sass/_portfolio.scss */
+/* line 87, ../sass/_portfolio.scss */
 img.fancybox-image {
   width: 100%;
 }
 
-/* line 90, ../sass/_portfolio.scss */
-.cats {
+/* line 91, ../sass/_portfolio.scss */
+.button-group {
   width: 100%;
   margin: 20px;
   border-radius: 2px;
   overflow: hidden;
 }
-/* line 95, ../sass/_portfolio.scss */
-.cats li {
-  float: left;
-  font-size: 26px;
-  line-height: 36px;
-}
-/* line 99, ../sass/_portfolio.scss */
-.cats li a {
+
+/* line 96, ../sass/_portfolio.scss */
+.button-group button {
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
   padding: 5px 12px;
+  float: left;
+  border: none;
+  font-size: 20px;
+  line-height: 36px;
+  text-transform: uppercase;
 }
-/* line 103, ../sass/_portfolio.scss */
-.cats li a:hover {
+
+/* line 105, ../sass/_portfolio.scss */
+.button-group button:hover {
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -1416,7 +1387,6 @@ img.fancybox-image {
   color: #545454;
   line-height: 1.5;
 }
-
 /* line 12, ../../../../../../../../lib/gems/2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .container-elastic:after {
   content: " ";
