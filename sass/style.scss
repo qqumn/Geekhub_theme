@@ -121,14 +121,10 @@ iframe {
   top: 0;
   right: 0;
   z-index: 100 !important;
-  width: 81% !important;
-  height: 100%;
-  div {
-    display: none;
-  }
 
-  iframe {
-    display: none;
+  height: 100%;
+  @media screen and (min-width: 1300px) {
+    width: 78% !important;
   }
 
 }

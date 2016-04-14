@@ -226,24 +226,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   z-index: 999;
 }
 
-@media screen and (min-width: 1024px) {
-  /* line 3, ../sass/_sidebar.scss */
-  #secondary {
-    margin-left: -40px;
-  }
-}
-
-/* line 10, ../sass/_sidebar.scss */
+/* line 7, ../sass/_sidebar.scss */
 #secondary .menu {
   background: #323335;
 }
 
-/* line 12, ../sass/_sidebar.scss */
+/* line 9, ../sass/_sidebar.scss */
 #secondary .menu li {
   text-align: center;
 }
 
-/* line 14, ../sass/_sidebar.scss */
+/* line 11, ../sass/_sidebar.scss */
 #secondary .menu li a {
   display: block;
   padding: 10px;
@@ -255,33 +248,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-transform: uppercase;
 }
 
-/* line 23, ../sass/_sidebar.scss */
+/* line 20, ../sass/_sidebar.scss */
 #secondary .menu li a:hover {
   background: rgba(34, 34, 34, 0.55);
 }
 
-/* line 31, ../sass/_sidebar.scss */
+/* line 28, ../sass/_sidebar.scss */
 .fa-bars {
   display: none !important;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 36, ../sass/_sidebar.scss */
+  /* line 33, ../sass/_sidebar.scss */
   #site-navigation {
     display: none;
   }
 
-  /* line 39, ../sass/_sidebar.scss */
+  /* line 36, ../sass/_sidebar.scss */
   .container-left {
     width: 100%;
   }
 
-  /* line 42, ../sass/_sidebar.scss */
+  /* line 39, ../sass/_sidebar.scss */
   .social-media-icons {
     display: none;
   }
 
-  /* line 45, ../sass/_sidebar.scss */
+  /* line 42, ../sass/_sidebar.scss */
   .fa-bars {
     display: block !important;
     margin: 0 auto !important;
@@ -290,7 +283,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     text-align: center;
   }
 
-  /* line 52, ../sass/_sidebar.scss */
+  /* line 49, ../sass/_sidebar.scss */
   #secondary {
     position: fixed;
     top: 52px;
@@ -298,25 +291,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 15px 0;
   }
 
-  /* line 58, ../sass/_sidebar.scss */
+  /* line 55, ../sass/_sidebar.scss */
   #wpadminbar {
     display: none;
   }
 
-  /* line 61, ../sass/_sidebar.scss */
+  /* line 58, ../sass/_sidebar.scss */
   .site-header {
     position: fixed;
     top: 0;
     width: 100%;
   }
 
-  /* line 65, ../sass/_sidebar.scss */
+  /* line 62, ../sass/_sidebar.scss */
   .site-header .site-description, .site-header form {
     display: none;
   }
 }
 
-/* line 71, ../sass/_sidebar.scss */
+/* line 68, ../sass/_sidebar.scss */
 .sidebar-image {
   display: block;
   margin: 20px auto;
@@ -1505,14 +1498,12 @@ iframe {
   top: 0;
   right: 0;
   z-index: 100 !important;
-  width: 81% !important;
   height: 100%;
 }
-/* line 126, ../sass/style.scss */
-iframe div {
-  display: none;
-}
-/* line 130, ../sass/style.scss */
-iframe iframe {
-  display: none;
+
+@media screen and (min-width: 1300px) {
+  /* line 119, ../sass/style.scss */
+  iframe {
+    width: 78% !important;
+  }
 }
