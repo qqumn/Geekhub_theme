@@ -29,7 +29,7 @@ get_header(); ?>
                                     class="author-name"><?php the_author(); ?></span>, <?php the_date(); ?></span>
                             <?php the_tags('', ' • ', ''); ?>
                         </header><!-- .entry-header -->
-                        <div class="entry-content">
+                        <div class="single-entry-content">
                             <?php
                             the_content();
                             ?>

@@ -8,7 +8,6 @@ get_header(); ?>
         ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main map-container" role="main">
-                <?php echo get_theme_mod('address-iframe', ''); ?>
                 <ul class="contact-info">
                     <li id="contact-name"><span class="fa fa-user"> </span> <?php echo get_theme_mod('name', ''); ?>
                     </li>
@@ -19,10 +18,13 @@ get_header(); ?>
                             href="mailto:<?php echo get_theme_mod('mail', ''); ?>"><?php echo get_theme_mod('mail', ''); ?></a>
                     </li>
                 </ul>
-                    <?php echo do_shortcode('[formCustom]') ?>
+                <?php echo do_shortcode('[formCustom]') ?>
+                <?php echo get_theme_mod('address-iframe', ''); ?>
             </main><!-- #main -->
         </div><!-- #primary -->
 
     </div>
 <?php
 get_footer();
+?>
+

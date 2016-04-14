@@ -18,6 +18,25 @@ $j(document).ready(function() {
         }
     }
 	});
+
+	var $grid = $j('.portfolio-showcase').isotope({
+		itemSelector: '.portfolio',
+		layoutMode: 'fitRows'
+	});
+	$j('.filter-button-group').on('click', 'button', function () {
+		var filterValue = $(this).attr('data-filter');
+		$grid.isotope({filter: filterValue});
+	});
+	var $grid2 = $j('.gallery-showcase').isotope({
+		itemSelector: '.gallery',
+		layoutMode: 'fitRows'
+	});
+	$j('.filter-button-group').on('click', 'button', function () {
+		var filterValue = $(this).attr('data-filter');
+		$grid2.isotope({filter: filterValue});
+	});
+
+
 	$j(document).ready(function ($) {
 		$j('.fa-bars').on('click', function () {
 			$('#site-navigation ').toggle();

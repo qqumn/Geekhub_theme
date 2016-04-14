@@ -7,16 +7,30 @@ get_header(); ?>
         get_sidebar();
         ?>
         <div id="primary" class="content-area">
-            <ul class="cats"><?php wp_list_categories(array(
-                    'taxonomy' => 'gallery_cats',//cats,kitties,kittens
-                    'hide_empty' => false,
+            <div class="button-group filter-button-group">
+                <button data-filter="*">All</button>
+                <?php
+                $cats = get_categories(array(
+                    'taxonomy' => 'gallery_cats',
+                    'hide_empty' => true,
                     'title_li' => ''
-                )) ?></ul>
+                ));
+
+
+                foreach ($cats as $cat) {
+                    ?>
+                    <button
+                        data-filter=".gallery_cats-<?php echo $cat->category_nicename ?>"> <?php echo $cat->cat_name ?></button>
+
+                    <?php
+                }
+                ?>
+            </div>
             <?php $query = new WP_Query(array('post_type' => 'gallery', 'posts_per_page' => 18)); ?>
             <?php if ($query->have_posts()) : ?>
                 <ul class="gallery-showcase">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
-                        <li class="gallery-pic">
+                        <li <?php post_class(); ?>>
                             <a href="<?php the_permalink() ?>" class="fancybox">
                                 <?php if (has_post_thumbnail()) {
                                     the_post_thumbnail();

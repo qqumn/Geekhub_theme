@@ -38,6 +38,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   outline: none;
 }
 
+#primary {
+  min-height: 78vh;
+  overflow: hidden;
+}
 .container-elastic {
   @include container(1170px);
   font-size: 12px;
@@ -119,8 +123,8 @@ iframe {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -100 !important;
-  width: 81% !important;
+  z-index: 200 !important;
+  width: 78% !important;
   height: 100%;
   div {
     display: none;

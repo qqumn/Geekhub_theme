@@ -1,6 +1,8 @@
 $Open_Sans: 'Open Sans', sans-serif;
 
 #secondary {
+  position: relative;
+  z-index: 999;
   .menu {
     background: #323335;
     li {

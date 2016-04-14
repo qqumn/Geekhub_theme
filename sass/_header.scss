@@ -5,7 +5,9 @@ $Open_Sans: 'Open Sans', sans-serif;
   margin-bottom: 20px;
   background-color: #db4437;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19);
-  z-index: 999;
+  z-index: 800;
+  position: relative;
+  width: 100%;
 }
 
 .site-branding {
@@ -34,7 +36,8 @@ $Open_Sans: 'Open Sans', sans-serif;
 
 .search-form {
   float: left;
-  width: 50%;
+  min-width: 20%;
+  max-width: 50%;
   .screen-reader-text, .search-submit {
     display: none;
   }
@@ -70,7 +73,7 @@ div.container-left {
 
 .social-media-icons {
   float: right;
-  max-width: 20%;
+  max-width: 40%;
   overflow: hidden;
   li {
     display: inline-block;
