@@ -5,9 +5,10 @@
   padding: 30px 20px;
   box-sizing: border-box;
   li {
-    float: left;
-    width: 50%;
+    display: inline-block;
+    width: 30%;
     height: 240px;
+    margin: 10px;
     position: relative;
     &:hover {
       transform: scale(1.2);
