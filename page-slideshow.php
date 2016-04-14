@@ -21,9 +21,9 @@ get_header(); ?>
                                             } ?>
                                         </div>
                                         <div class="slideshow-rollover">
-                                                <h3 class="feature-title">
-                                                    <?php trim_title_chars(10, ' ...'); ?>
-                                                </h3>
+                                            <h3 class="feature-title">
+                                                <?php trim_title_chars(10, ' ...'); ?>
+                                            </h3>
                                             <div class="feature-content"><?php echo wp_trim_words(get_the_content(), 15); ?></div>
                                         </div>
                                     </li>
@@ -36,8 +36,10 @@ get_header(); ?>
                         </ul>
                     </div>
                 </section>
-            </main><!-- #main -->
-        </div><!-- #primary -->
+            </main>
+            <!— #main —>
+        </div>
+        <!— #primary —>
 
     </div>
 <?php

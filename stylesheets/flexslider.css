@@ -68,6 +68,12 @@ html[xmlns] .slides {display: block;}
 @media (max-width: 1024px) {
 	.flex-direction-nav a { top: 50%;}
 }
+
+@media (min-width: 1200px) {
+	.flex-direction-nav a {
+		top: 45%;
+	}
+}
 .flex-direction-nav .flex-next {background-position: 100% 0; left: 60px;}
 .flex-direction-nav .flex-prev {left: 30px}
 .flexslider .flex-next {opacity: 0.9; left: 300;}
