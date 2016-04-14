@@ -37,10 +37,10 @@ get_header(); ?>
                             } ?>
                             <div class="rollover">
                                 <h3 class="item-title">
-                                    <?php the_title(); ?>
+                                    <?php trim_title_chars(7, ' ...'); ?>
                                 </h3>
 
-                                <p><?php echo wp_trim_words(the_content(), 20) ?></p>
+                                <p><?php echo substr(get_the_content(), 0, 20) ?></p>
                             </div>
                         </li>
                     <?php endwhile; ?>
