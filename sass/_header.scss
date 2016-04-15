@@ -5,16 +5,19 @@ $Open_Sans: 'Open Sans', sans-serif;
   margin-bottom: 20px;
   background-color: #db4437;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19);
-  z-index: 999;
+  z-index: 800;
+  position: relative;
+  width: 100%;
 }
 
 .site-branding {
   float: left;
-  width: 200px;
+  max-width: 70%;
   padding-right: 20px;
   .site-title a {
+    line-height: 1.1;
     display: inline-block;
-    font-size: 18px;
+    font-size: 32px;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
@@ -33,7 +36,8 @@ $Open_Sans: 'Open Sans', sans-serif;
 
 .search-form {
   float: left;
-  width: 50%;
+  min-width: 20%;
+  max-width: 30%;
   .screen-reader-text, .search-submit {
     display: none;
   }
@@ -69,7 +73,7 @@ div.container-left {
 
 .social-media-icons {
   float: right;
-  max-width: 20%;
+  max-width: 30%;
   overflow: hidden;
   li {
     display: inline-block;

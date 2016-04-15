@@ -1,6 +1,9 @@
 $Open_Sans: 'Open Sans', sans-serif;
 
 #secondary {
+  position: relative;
+  z-index: 999;
+
   .menu {
     background: #323335;
     li {
@@ -14,7 +17,6 @@ $Open_Sans: 'Open Sans', sans-serif;
         border-radius: 2px;
         letter-spacing: -1px;
         text-transform: uppercase;
-
         &:hover {
           background: rgba(#222222, 0.55);
         }

@@ -2,12 +2,14 @@
   width: 100%;
   float: left;
   margin: 0 auto;
+  margin-left: -10px;
   padding: 30px 20px;
   box-sizing: border-box;
   li {
-    float: left;
-    width: 50%;
+    display: inline-block;
+    width: 30%;
     height: 240px;
+    margin: 10px;
     position: relative;
     &:hover {
       transform: scale(1.2);
@@ -86,22 +88,23 @@ img.fancybox-image {
   width: 100%;
 }
 
-.cats {
+.button-group {
   width: 100%;
   margin: 20px;
   border-radius: 2px;
   overflow: hidden;
-  li {
+  button {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 5px 12px;
     float: left;
-    font-size: 26px;
+    border: none;
+    font-size: 20px;
     line-height: 36px;
-    a {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      padding: 5px 12px;
-      &:hover {
-        background: rgba(255, 255, 255, 0.06);
-      }
+    text-transform: uppercase;
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
     }
+
   }
 }

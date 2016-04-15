@@ -7,25 +7,40 @@ get_header(); ?>
         get_sidebar();
         ?>
         <div id="primary" class="content-area">
-            <ul class="cats"><?php wp_list_categories(array(
+            <div class="button-group filter-button-group">
+                <button data-filter="*">All</button>
+                <?php
+                $cats = get_categories(array(
                     'taxonomy' => 'portfolio_cats',
-                    'hide_empty' => false,
+                    'hide_empty' => true,
                     'title_li' => ''
-                )) ?></ul>
+                ));
+
+
+                foreach ($cats as $cat) {
+                    ?>
+                    <button
+                        data-filter=".portfolio_cats-<?php echo $cat->category_nicename ?>"> <?php echo $cat->cat_name ?></button>
+
+                    <?php
+                }
+                ?>
+            </div>
+
             <?php $query = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => 18)); ?>
             <?php if ($query->have_posts()) : ?>
                 <ul class="portfolio-showcase ">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
-                        <li class="portfolio-pic">
+                        <li <?php post_class(); ?>>
                             <?php if (has_post_thumbnail()) {
                                 the_post_thumbnail();
                             } ?>
                             <div class="rollover">
                                 <h3 class="item-title">
-                                    <?php the_title(); ?>
+                                    <?php trim_title_chars(7, ' ...'); ?>
                                 </h3>
 
-                                <p><?php echo wp_trim_words(the_content(), 20) ?></p>
+                                <p><?php echo substr(get_the_content(), 0, 20) ?></p>
                             </div>
                         </li>
                     <?php endwhile; ?>
@@ -39,3 +54,4 @@ get_header(); ?>
     </div>
 <?php
 get_footer();
+?>

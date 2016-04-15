@@ -32,6 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "_portfolio";
 @import "_single";
 @import "_404";
+@import "_search";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 *:focus {
@@ -119,15 +120,11 @@ iframe {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -100 !important;
-  width: 81% !important;
-  height: 100%;
-  div {
-    display: none;
-  }
+  z-index: 100 !important;
 
-  iframe {
-    display: none;
+  height: 100%;
+  @media screen and (min-width: 1300px) {
+    width: 78% !important;
   }
 
 }

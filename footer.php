@@ -13,20 +13,12 @@
 
 </div><!-- #content -->
 
-<!--<footer id="colophon" class="site-footer" role="contentinfo">-->
-<!--    <div class="container-elastic">-->
-<!--        <div class="site-info">-->
-<!--            <a href="#masthead"><span class="fa fa-chevron-up"></span></a>-->
-<!--            --><?php //printf(esc_html__('Theme: %1$s by %2$s.', 'ghtmeme'), 'ghtmeme', '<a href="http://underscores.me/" rel="designer">gh-wp-team</a>'); ?>
-<!--        </div><!-- .site-info -->
-<!--    </div>-->
-<!--</footer><!-- #colophon -->
-</div><!-- #page -->
+</div>
 <?php wp_footer(); ?>
-<script type="text/javascript" src="<?php bloginfo( 'template_url' );?>/js/jquery.flexslider.js" ></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider.js"></script>
 <script type="text/javascript">
     // Can also be used with $(document).ready()
-    jQuery(window).load(function() {
+    jQuery(window).load(function () {
         jQuery('.flexslider').flexslider({
             animation: "slide"
         });
