@@ -1,0 +1,84 @@
+$audio-color: #00e0b6;
+$help-color: #8ad903;
+$forum-color: #c847ff;
+$image-color: #ffb500;
+$quotes-color: #ff2eb4;
+$news-color: #ff5b4d;
+$slideshow-color: #0091e6;
+$video-color: #725eee;
+
+.site-main {
+  article.category-audio {
+    border-top: 7px solid $audio-color;
+    .read-more {
+      background: $audio-color;
+      &:hover {
+        background: darken($audio-color, 10%);
+      }
+    }
+  }
+  article.category-help {
+    border-top: 7px solid $help-color;
+    .read-more {
+      background: $help-color;
+      &:hover {
+        background: darken($help-color, 10%);
+      }
+    }
+  }
+  article.category-image {
+    border-top: 7px solid $image-color;
+    .read-more {
+      background: $image-color;
+      &:hover {
+        background: darken($image-color, 10%);
+      }
+    }
+  }
+  article.category-forum {
+    border-top: 7px solid $forum-color;
+    .read-more {
+      background: $forum-color;
+      &:hover {
+        background: darken($forum-color, 10%);
+      }
+    }
+  }
+  article.category-quotes {
+    border-top: 7px solid $quotes-color;
+    .read-more {
+      background: $quotes-color;
+      &:hover {
+        background: darken($quotes-color, 10%);
+      }
+    }
+  }
+  article.category-news {
+    border-top: 7px solid $news-color;
+    .read-more {
+      background: $news-color;
+      &:hover {
+        background: darken($news-color, 10%);
+      }
+    }
+  }
+  article.category-slideshow {
+    border-top: 7px solid $slideshow-color;
+    .read-more {
+      background: $slideshow-color;
+      &:hover {
+        background: darken($slideshow-color, 10%);
+      }
+    }
+  }
+  article.category-video {
+    border-top: 7px solid $video-color;
+    .read-more {
+      background: $video-color;
+      &:hover {
+        background: darken($video-color, 10%);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,116 @@
+.portfolio-showcase {
+  width: 100%;
+  float: left;
+  margin: 0 auto 20px -10px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  li {
+    @include span(3 of 10);
+    height: 240px;
+    margin: 10px;
+    position: relative;
+    &:hover {
+      transform: scale(1.2);
+      transition: transform .4s ease;
+      z-index: 999;
+    }
+    -webkit-filter: grayscale(100%);
+    img {
+      overflow: hidden;
+      width: 100%;
+      max-height: 240px !important;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    }
+    .rollover {
+      position: absolute;
+      bottom: 20px;
+      background: #fff;
+      opacity: 0;
+      left: -20px;
+      background: rgba(0, 0, 0, 0.42);
+      border-right: 3px solid lighten(#363636, 50%);
+      padding: 7px 25px;
+      font-size: 16px;
+      color: #fff;
+    }
+    &:hover {
+      .rollover {
+        opacity: 1;
+        transition: transform .5s ease;
+        transform: translatex(10px);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      width: 28%;
+      max-height: 360px;
+      height: 240px;
+      img {
+        max-height: 360px !important;
+        height: 100%;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      width: 90%;
+    }
+    @media screen and (max-width: 360px) {
+      width: 100%;
+      max-height: 480px;
+      height: auto;
+      img {
+        width: 87%;
+        max-height: 480px !important;
+        height: auto;
+      }
+      .rollover {
+        left: 20;
+      }
+    }
+  }
+  &:hover {
+    -webkit-filter: grayscale(0%);
+  }
+
+}
+
+div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened {
+  position: relative;
+  transform: scale(.8);
+  transition: transform 2s ease;
+  z-index: 101;
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    left: -50%;
+    top: -50%;
+    width: 200vw;
+    height: 200vh;
+    background: rgba(8, 8, 8, .9);
+    z-index: -10;
+  }
+}
+
+img.fancybox-image {
+  width: 100%;
+}
+
+.button-group {
+  width: 100%;
+  margin: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+  button {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 5px 12px;
+    float: left;
+    border: none;
+    font-size: 18px;
+    line-height: 36px;
+    text-transform: uppercase;
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+  }
+}

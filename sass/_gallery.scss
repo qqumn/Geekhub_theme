@@ -1,0 +1,112 @@
+.gallery-showcase {
+  width: 100%;
+  float: left;
+  margin: 0 auto 30px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  li {
+    @media screen and (max-width: 768px) {
+      width: 44%;
+      float: left;
+      margin-right: 1.69492%;
+    }
+    @media screen and (max-width: 680px) {
+      width: 44%;
+      float: left;
+      margin-right: 1.69492%;
+    }
+    @media screen and (max-width: 360px) {
+      width: 100%;
+      .rollover {
+        left: 20;
+      }
+    }
+    @media (max-width: 320px) {
+      width: 87%;
+      margin: 0 auto;
+    }
+    float: left;
+    width: 25%;
+    height: 270px;
+    position: relative;
+    &:hover {
+      transform: scale(1.2);
+      transition: transform .4s ease;
+      z-index: 999;
+    }
+    -webkit-filter: grayscale(100%);
+    a {
+      display: block;
+      img {
+        overflow: hidden;
+        max-width: 100% !important;
+        max-height: 240px !important;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+      }
+      .rollover {
+        position: absolute;
+        bottom: 20px;
+        background: #fff;
+        opacity: 0;
+        left: -20px;
+        background: rgba(0, 0, 0, 0.42);
+        border-right: 3px solid lighten(#363636, 50%);
+        padding: 7px 25px;
+        font-size: 16px;
+        color: #fff;
+      }
+      &:hover {
+        .rollover {
+          opacity: 1;
+          transition: transform .5s ease;
+          transform: translatex(10px);
+        }
+      }
+    }
+    &:hover {
+      -webkit-filter: grayscale(0%);
+    }
+  }
+}
+
+div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened {
+  position: relative;
+  transform: scale(.8);
+  transition: transform 2s ease;
+  z-index: 101;
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    left: -50%;
+    top: -50%;
+    width: 200vw;
+    height: 200vh;
+    background: rgba(8, 8, 8, .9);
+    z-index: -10;
+  }
+}
+
+img.fancybox-image {
+  width: 100%;
+}
+
+.cats {
+  width: 100%;
+  margin: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+  li {
+    float: left;
+    font-size: 26px;
+    line-height: 36px;
+    a {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      padding: 5px 12px;
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+    }
+  }
+}

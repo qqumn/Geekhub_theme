@@ -1,0 +1,55 @@
+$Open_Sans: 'Open Sans', sans-serif;
+.search-wrapper {
+  max-width: 90%;
+  font-family: $Open_Sans;
+}
+.page-header {
+  .page-title {
+    margin: 15px 0;
+    color: #545454;
+    span {
+      color: #adadad;
+    }
+  }
+}
+.entry-header {
+  .entry-title {
+    a {
+      display: block;
+      margin: 10px 0;
+      color:#adadad;
+    }
+  }
+}
+.post {
+  padding: 15px;
+  .entry-header {
+    a {
+      color: #545454;
+    }
+  }
+  .entry-meta {
+    margin: 10px 0;
+    color: #adadad;
+  }
+  .entry-summary {
+    p {
+      color: #adadad;
+    }
+  }
+  .entry-footer {
+margin: 10px 0;
+  }
+  .post-edit-link {
+    padding: 0 5px;
+  }
+}
+.page {
+  .entry-summary {
+    margin: 10px 0;
+    p {
+      line-height: 25px;
+      color: #adadad;
+    }
+  }
+}

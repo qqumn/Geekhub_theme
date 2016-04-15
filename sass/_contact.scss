@@ -1,0 +1,111 @@
+
+.contact-info {
+  li {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  position: relative;
+  z-index: 500;
+  float: left;
+  padding: 20px;
+  background: #363636;
+  border-right: 3px solid lighten(#363636, 80%);
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+  a {
+    color: #fff;
+  }
+  .fa {
+    color: #fff;
+  }
+  @media (min-width: 1024px) {
+    margin-left: 50px;
+  }
+}
+
+.contact {
+  position: relative;
+  z-index: 500;
+  float: right;
+  background: #363636;
+  padding: 20px;
+  width: 300px;
+  border-left: 3px solid lighten(#363636, 80%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.29);
+  box-sizing: border-box;
+  #response {
+    margin: 20px 0 10px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #c847ff;
+  }
+  .contact-form {
+    h2 {
+      font-size: 18px;
+    }
+    input, textarea {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 5px 0;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      color: #fff;
+      border-radius: 2px;
+      background: rgba(#ddd, 0.12);
+    }
+
+    button[type='submit'] {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 20px;
+      background: lighten(#363636, 40%);
+      border-radius: 2px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background: lighten(#363636, 15%);
+      }
+    }
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+    ::-webkit-input-placeholder {
+      color: #fff !important;
+    }
+    ::-moz-placeholder {
+      color: #fff !important;
+    }
+    :-moz-placeholder {
+      color: #fff !important;
+    }
+    :-ms-input-placeholder {
+      color: #fff !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info, .contact {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 3px solid lighten(#363636, 80%);
+  }
+  iframe {
+   min-width: 100%;
+    display: none;
+  }
+}
+@media (min-width: 320px) {
+  #primary {
+    margin-top: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  iframe {
+    min-width: 79%;
+  }
+}

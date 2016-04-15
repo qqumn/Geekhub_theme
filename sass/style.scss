@@ -1,0 +1,138 @@
+/*!
+Theme Name: ghtheme
+Theme URI: http://underscores.me/
+Author: gh-wp-team
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ghtmeme
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ghtheme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+@import 'compass/reset';
+@import "susy";
+@import "_blog";
+@import "_sidebar";
+@import "_header";
+@import "_features";
+@import "_categories";
+@import "_contact";
+@import "_slideshow";
+@import "_gallery";
+@import "_portfolio";
+@import "_single";
+@import "_404";
+@import "_search";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+*:focus {
+  outline: none;
+}
+
+.container-elastic {
+  @include container(1170px);
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: #545454;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: #323335;
+
+}
+
+#primary {
+  @include span(10 of 12);
+  @include last;
+  #main {
+    margin: 0 auto;
+  }
+}
+
+#secondary {
+  @include span(2 of 12);
+}
+
+@media screen and (max-width: 320px) {
+  #primary {
+    @include span(12 of 12);
+    @include last;
+  }
+
+  #secondary {
+    @include span(12 of 12);
+    @include last;
+  }
+}
+@media screen and (max-width: 768px) {
+  #primary {
+    @include span(12 of 12);
+    @include last;
+  }
+
+  #secondary {
+    @include span(12 of 12);
+    @include last;
+  }
+}
+
+.blog-page {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  width: 95%;
+  @media (max-width: 1024px) {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    width: 95%;
+  }
+  @media (max-width: 600px) {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    width: 90%;
+  }
+  @media (max-width: 3600px) {
+    margin: 0 auto;
+  }
+  article.post {
+    display: inline-block;
+    vertical-align: top;
+    width: 98%;
+    margin: 10px;
+    box-sizing: border-box;
+    transition: max-width .6s ease;
+  }
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100 !important;
+
+  height: 100%;
+  @media screen and (min-width: 1300px) {
+    width: 79% !important;
+  }
+
+}
+#content {
+  overflow: hidden;
+}
